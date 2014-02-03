@@ -1,0 +1,30 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title">オプション</div>
+	<div class="block_body">
+	<form method="post" action="<TMPL_VAR NAME=URL>">
+	<TMPL_IF SESSIONNAME>
+	<input type="hidden" name="<TMPL_VAR NAME=SESSIONNAME>" value="<TMPL_VAR NAME=SESSIONID>" />
+	</TMPL_IF>
+	<table cellspacing="1">
+	<tr><th>メッセージのお知らせメール</th>
+	<td><input type="checkbox" name="mailmessageflag" <TMPL_VAR MAILMESSAGEFLAG> id="mailmessageflag" /><label for="mailmessageflag">受け取る</label><br />
+	携帯のメールアドレスを登録している方は <a href="mailto:<TMPL_VAR ADMINMAIL>"><TMPL_VAR ADMINMAIL></a> からのメールを受信できるように設定してください。</td></tr>
+	</table>
+	<input type="submit" name="submit" value="確認"><br />
+	</form>
+	</div>
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

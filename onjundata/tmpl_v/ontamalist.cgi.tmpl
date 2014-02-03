@@ -1,0 +1,49 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>Ç›ÇÒÇ»ÇÃÇ®ÇÒÇΩÇ‹</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+
+<TMPL_IF ONTAMALIST>
+	<TMPL_LOOP ONTAMALIST>
+		<TMPL_IF DEAD>
+			<a href="<TMPL_VAR ONTAMAURL>"><img src="./res/corpse1.gif" alt="<TMPL_VAR NAME>"></a>
+		<TMPL_ELSE>
+			<a href="<TMPL_VAR ONTAMAURL>"><img src="<TMPL_VAR URL_ONTAMAIMAGE>" alt="<TMPL_VAR NAME>"></a>
+		</TMPL_IF>
+		<TMPL_VAR NAME><br />
+		Ñ∞$G!<TMPL_VAR OWNERNAME><br />
+		ÑØ$Ok<TMPL_VAR DAYS>ì˙ñ⁄<br />
+	</TMPL_LOOP>
+	</table>
+
+	<TMPL_IF NOWPAGENOLABEL>
+		<hr size="1">
+		<!-- ÉyÅ[ÉW -->
+		<TMPL_IF PREVPAGEURL>
+		<a href="<TMPL_VAR PREVPAGEURL>">Å©</a>
+		</TMPL_IF>
+		<TMPL_LOOP BACKPAGELOOP>
+		<a href="<TMPL_VAR BACKPAGEURL>"><TMPL_VAR BACKPAGELABEL></a>
+		</TMPL_LOOP>
+		<TMPL_IF NOWPAGENOLABEL>
+		<blink><TMPL_VAR NOWPAGENOLABEL></blink>
+		</TMPL_IF>
+		<TMPL_LOOP FORWARDPAGELOOP>
+		<a href="<TMPL_VAR FORWARDPAGEURL>"><TMPL_VAR FORWARDPAGELABEL></a>
+		</TMPL_LOOP>
+		<TMPL_IF NEXTPAGEURL>
+		<a href="<TMPL_VAR NEXTPAGEURL>">Å®</a>
+		</TMPL_IF>
+		<br />
+	</TMPL_IF>
+<TMPL_ELSE>
+	Ç®ÇÒÇΩÇ‹ÇÕÇ¢Ç‹ÇπÇÒÅB<br />
+</TMPL_IF>
+
+<hr />
+<a href="<TMPL_VAR URL_ONTAMA>">$QCÇ®ÇÒÇΩÇ‹</a><br />
+<a href="<TMPL_VAR URL_HOME>">$GVÉzÅ[ÉÄ</a>
+</body>
+</html>

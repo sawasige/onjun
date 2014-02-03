@@ -1,0 +1,60 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title">フォーラム</div>
+	<div class="block_body">
+		<a href="<TMPL_VAR URL_FORUMLIST>">フォーラム一覧</a> / <b><TMPL_VAR FORUMNAME></b><br />
+		<TMPL_VAR FORUMNOTE><br />
+		<a href="<TMPL_VAR URL_POSTTOPIC>">新規トピック作成</a><br />
+		<TMPL_IF TOPICS>
+			<table class="topics" cellspacing="1" width="100%">
+			<tr><th>トピックタイトル</th><th width="70">投稿</th><th width="70">最終</th></tr>
+			<TMPL_LOOP TOPICS>
+				<tr><td><a name="<TMPL_VAR ID>"></a>
+					<a href="<TMPL_VAR URL>"><TMPL_VAR TITLE></a>(<TMPL_VAR COMMENTCOUNT>)</td>
+				<td><TMPL_VAR REGISTTIME><br />
+				<a href="<TMPL_VAR REGISTUSERURL>"><TMPL_VAR REGISTUSERNAME></a></td>
+				<td><TMPL_VAR LASTTIME><br />
+				<a href="<TMPL_VAR LASTUSERURL>"><TMPL_VAR LASTUSERNAME></a></td></tr>
+			</TMPL_LOOP>
+			</table>
+
+			<TMPL_IF NOWPAGENOLABEL>
+			<div class="pagelink">
+				<!-- ページ -->
+				<TMPL_IF PREVPAGEURL>
+				<a href="<TMPL_VAR PREVPAGEURL>">←</a>
+				</TMPL_IF>
+				<TMPL_LOOP BACKPAGELOOP>
+				<a href="<TMPL_VAR BACKPAGEURL>"><TMPL_VAR BACKPAGELABEL></a>
+				</TMPL_LOOP>
+				<TMPL_IF NOWPAGENOLABEL>
+				<blink><b><TMPL_VAR NOWPAGENOLABEL></b></blink>
+				</TMPL_IF>
+				<TMPL_LOOP FORWARDPAGELOOP>
+				<a href="<TMPL_VAR FORWARDPAGEURL>"><TMPL_VAR FORWARDPAGELABEL></a>
+				</TMPL_LOOP>
+				<TMPL_IF NEXTPAGEURL>
+				<a href="<TMPL_VAR NEXTPAGEURL>">→</a>
+				</TMPL_IF>
+			</div>
+			</TMPL_IF>
+		<TMPL_ELSE>
+		<hr size=1 />
+		トピックはありません。
+		</TMPL_IF>
+
+	</div>
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

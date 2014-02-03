@@ -1,0 +1,26 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>フォーラム一覧</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<TMPL_LOOP FORUMCATEGORIES>
+	<hr size=1 />
+	<a name="cat<TMPL_VAR ID>"></a>
+	<font color="#639ACE">▼</font><TMPL_VAR NAME><br />
+	<TMPL_LOOP FORUMS>
+	<a href="<TMPL_VAR URL>"><img localsrc="65"><TMPL_VAR NAME></a><br />
+	<font size="-1"><TMPL_VAR NOTE></font><br />
+	
+	<TMPL_IF LASTUSER>
+	<font size="-1">最終投稿:<a href="<TMPL_VAR URL_LASTUSER>"><TMPL_VAR LASTUSER></a><br />
+	<TMPL_VAR LASTTIME></font><br />
+	</TMPL_IF>
+	<font size="-1">話題数:<TMPL_VAR THREADCOUNT><br />
+	投稿数:<TMPL_VAR POSTCOUNT><br /></font>
+	</TMPL_LOOP>
+</TMPL_LOOP>
+<hr />
+<a href="<TMPL_VAR URL_HOME>"><img localsrc="93">ホーム</a>
+</body>
+</html>

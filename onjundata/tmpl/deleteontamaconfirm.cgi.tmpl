@@ -1,0 +1,49 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_ontama.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<TMPL_IF URL_ONTAMAIMAGE>
+		<div class="block_title">おんたま「<TMPL_VAR ONTAMANAME>」の消去確認</div>
+		<div class="block_body">
+			<TMPL_VAR ONTAMAOWNERNAME>さんの<TMPL_VAR ONTAMANAME>です。<br />
+			<img src="<TMPL_VAR URL_ONTAMAIMAGE>"><br />
+			<form method="post" action="<TMPL_VAR URL>">
+				<TMPL_IF SESSIONNAME>
+				<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+				</TMPL_IF>
+				<TMPL_VAR ONTAMANAME>を消去します。<br />
+				同じおんたまは二度と帰ってきませんがほんとうによろしいですか？<br />
+				<input type="submit" name="submit" value="はい">
+				<input type="submit" name="cancel" value="いいえ">
+			</form>
+		</div>
+	</TMPL_IF>
+	<TMPL_IF ONTAMADEAD>
+		<div class="block_title">おんたま「<TMPL_VAR ONTAMANAME>」の消去確認</div>
+		<div class="block_body">
+			<TMPL_VAR ONTAMAOWNERNAME>さんの<TMPL_VAR ONTAMANAME>です。<br />
+			<img src="./res/corpse1.gif"><br />
+			<form method="post" action="<TMPL_VAR URL>">
+				<TMPL_IF SESSIONNAME>
+				<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+				</TMPL_IF>
+				<TMPL_VAR ONTAMANAME>を消去します。<br />
+				<input type="submit" name="submit" value="はい">
+				<input type="submit" name="cancel" value="いいえ">
+			</form>
+		</div>
+	</TMPL_IF>
+		
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

@@ -1,0 +1,38 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>メッセージ送信</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<TMPL_IF RECEIVER_USERID>
+	<form method="post" action="<TMPL_VAR URL>">
+	<input type="hidden" name="receiver_userid" value="<TMPL_VAR RECEIVER_USERID>" />
+	<TMPL_IF SESSIONNAME>
+	<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+	</TMPL_IF>
+<TMPL_IF REPLYID>
+	<input type="hidden" name="replyid" value="<TMPL_VAR REPLYID>" />
+	<font color="#639ACE">▼</font>元送信者<br />
+	<TMPL_VAR RECEIVER_NAME><br />
+	<font color="#639ACE">▼</font>元サブジェクト<br />
+	<TMPL_VAR REPLY_SUBJECT><br />
+	<font color="#639ACE">▼</font>元本文<br />
+	<TMPL_VAR REPLY_BODY><br />
+	<hr />
+</TMPL_IF>
+	<font color="#639ACE">▼</font>宛先<br />
+	<TMPL_VAR RECEIVER_NAME><br />
+	<font color="#639ACE">▼</font>サブジェクト<br />
+	<input type="text" name="subject" maxsize=255 value="<TMPL_VAR SUBJECT>"><br />
+	<font color="#639ACE">▼</font>本文<br />
+	
+	<textarea rows="5" name="body"><TMPL_VAR BODY></textarea>
+	<br />
+	<input type="submit" name="submit" value="確認"><br />
+	</form>
+</TMPL_IF>
+<hr />
+<a href="<TMPL_VAR URL_HOME>"><img localsrc="93">ホーム</a>
+
+</body>
+</html>

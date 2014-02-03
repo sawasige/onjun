@@ -1,0 +1,119 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+
+<!-- “Šeƒ^ƒCƒgƒ‹ -->
+$O!<TMPL_VAR TOPICTITLE><br />
+<!-- “ŠeŽÒ -->
+$G!<a href="<TMPL_VAR TOPICREGISTUSERURL>"><TMPL_VAR TOPICREGISTUSERNAME></a><br />
+<!-- “ŠeŽžŠÔ -->
+$GF<TMPL_VAR TOPICREGISTTIME><br />
+<TMPL_IF FILE1LARGEURL>
+	<!-- ŽÊ^1 -->
+	<TMPL_IF FILE1SMALLURL>
+		<a href="<TMPL_VAR FILE1LARGEURL>"><img src="<TMPL_VAR FILE1SMALLURL>">Šg‘å</a><br />
+	<TMPL_ELSE>
+		<img src="<TMPL_VAR FILE1LARGEURL>"><br />
+	</TMPL_IF>
+</TMPL_IF>
+<TMPL_IF FILE2LARGEURL>
+	<!-- ŽÊ^2 -->
+	<TMPL_IF FILE2SMALLURL>
+		<a href="<TMPL_VAR FILE2LARGEURL>"><img src="<TMPL_VAR FILE2SMALLURL>">Šg‘å</a><br />
+	<TMPL_ELSE>
+		<img src="<TMPL_VAR FILE2LARGEURL>"><br />
+	</TMPL_IF>
+</TMPL_IF>
+<TMPL_IF FILE3LARGEURL>
+	<!-- ŽÊ^3 -->
+	<TMPL_IF FILE3SMALLURL>
+		<a href="<TMPL_VAR FILE3LARGEURL>"><img src="<TMPL_VAR FILE3SMALLURL>">Šg‘å</a><br />
+	<TMPL_ELSE>
+		<img src="<TMPL_VAR FILE3LARGEURL>"><br />
+	</TMPL_IF>
+</TMPL_IF>
+<!-- –{•¶ -->
+<TMPL_VAR TOPICBODY><br />
+<TMPL_IF MODIFYTOPICURL><a href="<TMPL_VAR MODIFYTOPICURL>">[C³]</a></TMPL_IF><TMPL_IF DELETETOPICURL><a href="<TMPL_VAR DELETETOPICURL>">[íœ]</a><br /></TMPL_IF>
+
+<TMPL_IF COMMENTS>
+	<hr />
+	<a href="<TMPL_VAR POSTTOPICCOMMENTURL>">$O7ƒRƒƒ“ƒg‚ð‘‚­</a><br />
+	<a href="<TMPL_VAR URL_POSTTOPIC>">$O7V‹KƒgƒsƒbƒNì¬</a><br />
+	<TMPL_LOOP COMMENTS>
+		<hr size=1 />
+		<a name="<TMPL_VAR ID>"></a>
+		<!-- “ŠeŽÒ -->
+		$G!<TMPL_VAR COMMENTNO>.<a href="<TMPL_VAR REGISTUSERURL>"><TMPL_VAR REGISTUSERNAME></a><br />
+		<!-- “ŠeŽžŠÔ -->
+		$GF<TMPL_VAR REGISTTIME><br />
+		<TMPL_IF EXISTFILE>
+			<a href="<TMPL_VAR TOPICCOMMENTURL>">ŽÊ^‚ðŒ©‚é</a><br />
+		</TMPL_IF>
+		<TMPL_UNLESS MOBILE>
+			<TMPL_IF FILE1LARGEURL>
+				<!-- ŽÊ^1 -->
+				<TMPL_IF FILE1SMALLURL>
+					<a href="<TMPL_VAR FILE1LARGEURL>"><img src="<TMPL_VAR FILE1SMALLURL>">Šg‘å</a><br />
+				<TMPL_ELSE>
+					<img src="<TMPL_VAR FILE1LARGEURL>"><br />
+				</TMPL_IF>
+			</TMPL_IF>
+			<TMPL_IF FILE2LARGEURL>
+				<!-- ŽÊ^2 -->
+				<TMPL_IF FILE2SMALLURL>
+					<a href="<TMPL_VAR FILE2LARGEURL>"><img src="<TMPL_VAR FILE2SMALLURL>">Šg‘å</a><br />
+				<TMPL_ELSE>
+					<img src="<TMPL_VAR FILE2LARGEURL>"><br />
+				</TMPL_IF>
+			</TMPL_IF>
+			<TMPL_IF FILE3LARGEURL>
+				<!-- ŽÊ^3 -->
+				<TMPL_IF FILE3SMALLURL>
+					<a href="<TMPL_VAR FILE3LARGEURL>"><img src="<TMPL_VAR FILE3SMALLURL>">Šg‘å</a><br />
+				<TMPL_ELSE>
+					<img src="<TMPL_VAR FILE3LARGEURL>"><br />
+				</TMPL_IF>
+			</TMPL_IF>
+		</TMPL_UNLESS>
+		<!-- –{•¶ -->
+		<TMPL_VAR BODY><br />
+		<TMPL_IF MODIFYTOPICCOMMENTURL><a href="<TMPL_VAR MODIFYTOPICCOMMENTURL>">[C³]</a></TMPL_IF><TMPL_IF DELETETOPICCOMMENTURL><a href="<TMPL_VAR DELETETOPICCOMMENTURL>">[íœ]</a><br /></TMPL_IF>
+	</TMPL_LOOP>
+
+	<TMPL_IF NOWPAGENOLABEL>
+		<hr size=1 />
+		<!-- ƒy[ƒW -->
+		<TMPL_IF PREVPAGEURL>
+		<a href="<TMPL_VAR PREVPAGEURL>">©</a>
+		</TMPL_IF>
+		<TMPL_LOOP BACKPAGELOOP>
+		<a href="<TMPL_VAR BACKPAGEURL>"><TMPL_VAR BACKPAGELABEL></a>
+		</TMPL_LOOP>
+		<TMPL_IF NOWPAGENOLABEL>
+		<blink><TMPL_VAR NOWPAGENOLABEL></blink>
+		</TMPL_IF>
+		<TMPL_LOOP FORWARDPAGELOOP>
+		<a href="<TMPL_VAR FORWARDPAGEURL>"><TMPL_VAR FORWARDPAGELABEL></a>
+		</TMPL_LOOP>
+		<TMPL_IF NEXTPAGEURL>
+		<a href="<TMPL_VAR NEXTPAGEURL>">¨</a>
+		</TMPL_IF>
+		<br />
+	</TMPL_IF>
+<TMPL_ELSE>
+<hr />
+ƒRƒƒ“ƒg‚Í‚ ‚è‚Ü‚¹‚ñB<br />
+</TMPL_IF>
+<hr />
+<a href="<TMPL_VAR POSTTOPICCOMMENTURL>">$O7ƒRƒƒ“ƒg‚ð‘‚­</a><br />
+<a href="<TMPL_VAR URL_POSTTOPIC>">$O7V‹KƒgƒsƒbƒNì¬</a><br />
+
+<hr />
+<a href="<TMPL_VAR FORUMURL>">$Ge<TMPL_VAR FORUMNAME></a><br />
+<a href="<TMPL_VAR URL_FORUMLIST>">$GeƒtƒH[ƒ‰ƒ€ˆê——</a><br />
+<a href="<TMPL_VAR URL_HOME>">$GVƒz[ƒ€</a>
+</body>
+</html>

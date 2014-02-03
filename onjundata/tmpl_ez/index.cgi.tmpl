@@ -1,0 +1,45 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center><TMPL_VAR TITLE></center>
+<marquee><img localsrc="343"><TMPL_VAR SUBTITLE></marquee>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<hr />
+<center><img localsrc="143"> メニュー <img localsrc="143"></center>
+<a href="login.cgi" accesskey=1><img localsrc="180">ログイン</a><br>
+<a href="login.cgi?easylogin=1" accesskey=2 utn><img localsrc="181">かんたんログイン</a><br />
+<img localsrc="420">初めての方は<br />
+<a href="reguser.cgi" accesskey=3><img localsrc="182">ユーザー登録</a><br />
+<font size="-1"><font color="red"><blink>※</blink></font> 旧 onjun.net 会員も再登録してください。</font><br />
+<TMPL_IF NEWS>
+	<hr />
+	<center><img localsrc="1"> 新着情報 <img localsrc="1"></center>
+	<TMPL_LOOP NEWS>
+		<TMPL_IF TOPICTITLE>
+			<TMPL_VAR DATE>…<a href="<TMPL_VAR URL>"><TMPL_VAR TOPICTITLE>(<TMPL_VAR COUNT>)</a> (<a href="<TMPL_VAR FORUMURL>"><TMPL_VAR FORUMNAME></a>)<br />
+		</TMPL_IF>
+	</TMPL_LOOP>
+	<div align="right">
+		<a href="<TMPL_VAR URL_NEWS>">もっと...</a>
+	</div>
+</TMPL_IF>
+<TMPL_IF NEWMEMBERS>
+	<hr />
+	<center><img localsrc="50"> 新しいメンバー <img localsrc="50"></center>
+	<TMPL_LOOP NEWMEMBERS>
+		<TMPL_VAR DATE>…<a href="<TMPL_VAR URL>"><TMPL_VAR NAME></a><br />
+	</TMPL_LOOP>
+</TMPL_IF>
+<TMPL_IF ONLINEMEMBERS>
+	<hr />
+	<center><img localsrc="164"> オンライン <img localsrc="164"></center>
+	<TMPL_LOOP ONLINEMEMBERS>
+		<a href="<TMPL_VAR URL>"><TMPL_VAR NAME></a>(<TMPL_VAR PAGETITLE>)<br />
+	</TMPL_LOOP>
+</TMPL_IF>
+<hr />
+<div align="right"><img localsrc="81">sawasige</div>
+
+</body>
+</html>

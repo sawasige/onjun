@@ -1,0 +1,52 @@
+use strict;
+use CGI::Carp qw(fatalsToBrowser); # エラーメッセージを表示する（しない場合コメントアウト）
+
+######
+# 設定
+sub config() {
+	my %config;
+
+	$config{'title'} = 'onjun';
+	$config{'subtitle'} = '深谷高校吹奏楽部コミュニケーションサイト';
+	$config{'index_url'} = 'http://onjun.himatsubu.com/index.cgi';
+	$config{'cookie_path'} = '/';
+	$config{'receivemessagelist_url'} = 'http://onjun.himatsubu.com/receivemessagelist.cgi';
+	
+	$config{'initadminname'} = 'sawasige';
+	$config{'initadminpass'} = '???????';
+	$config{'initadminmail'} = 'onjun@himatsubu.com';
+	$config{'initadminmobcode'} = 'icc00000000000000000001';
+
+	$config{'db_source'} = 'DBI:mysql:himatsubu:mysql22.db.sakura.ne.jp';
+	$config{'db_user'} = 'himatsubu';
+	$config{'db_pass'} = ''???????';
+
+	$config{'adminmail'} = 'onjun@himatsubu.com';
+	$config{'popbeforesmtp'} = 1;
+	$config{'smtp'} = 'himatsubu.com';
+	$config{'postmail'} = 'onjun@himatsubu.com';
+	$config{'pop3'} = 'himatsubu.com';
+	$config{'pop3_user'} = 'onjun@himatsubu.com';
+	$config{'pop3_pass'} = ''???????';
+
+	$config{'sessionname'} = 'oid';
+	$config{'sessiondir'} = '/home/himatsubu/onjundata/session';
+	$config{'tmpldir'} = '/home/himatsubu/onjundata/tmpl';
+	$config{'tmpldir_i'} = '/home/himatsubu/onjundata/tmpl_i';
+	$config{'tmpldir_ez'} = '/home/himatsubu/onjundata/tmpl_ez';
+	$config{'tmpldir_v'} = '/home/himatsubu/onjundata/tmpl_v';
+	$config{'uploaddir'} = './uploadfiles';
+	$config{'deleteddir'} = '/home/himatsubu/onjundata/deletedfiles';
+	$config{'ontamadir'} = '/home/himatsubu/onjundata/ontama';
+	$config{'ontamaimagesdir'} = '/home/himatsubu/www/onjun/ontamaimages';
+	$config{'ontamaimagesurl'} = './ontamaimages';
+
+	$config{'logdir'} = '/home/himatsubu/onjundata/log';
+	$config{'loglevel'} = 1;
+
+	$config{'image_maxsize'} = 800;
+	$config{'image_s_maxsize'} = 80;
+	return %config;
+}
+
+1;

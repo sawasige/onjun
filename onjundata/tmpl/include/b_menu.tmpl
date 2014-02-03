@@ -1,0 +1,13 @@
+	<div class="block_title">メインメニュー</div>
+	<div class="block_body">
+	<div><a class="menu" href="<TMPL_VAR URL_HOME>">ホーム</a></div>
+	<div><a class="menu" href="<TMPL_VAR URL_RECEIVEMESSAGELIST>">メッセージ</a><TMPL_IF NEW_MESSAGE_COUNT><font color="red">(<TMPL_VAR NEW_MESSAGE_COUNT>件未読)</font></TMPL_IF></div>
+	<div><a class="menu" href="<TMPL_VAR URL_FORUMLIST>">フォーラム</a></div>
+	<div><a class="menu" href="<TMPL_VAR URL_MEMBERLIST>">メンバー一覧</a></div>
+	<div><a class="menu" href="<TMPL_VAR URL_PROFILE>">プロフィール</a></div>
+	<div><a class="menu" href="<TMPL_VAR URL_OPTION>">オプション</a></div>
+	<TMPL_IF URL_ADDUP>
+	<div><a class="menu" href="<TMPL_VAR URL_ADDUP>">集計</a></div>
+	</TMPL_IF>
+	<div><a class="menu" href="<TMPL_VAR URL_LOGOUT>">ログアウト</a></div>
+	</div>

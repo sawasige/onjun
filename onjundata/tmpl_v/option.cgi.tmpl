@@ -1,0 +1,19 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>ƒƒbƒZ[ƒW‘—M</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<form method="post" action="<TMPL_VAR URL>">
+<TMPL_IF SESSIONNAME>
+<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+</TMPL_IF>
+<font color="#639ACE">¥</font>ƒƒbƒZ[ƒW‚Ì‚¨’m‚ç‚¹ƒ[ƒ‹<br />
+<input type="checkbox" name="mailmessageflag" <TMPL_VAR MAILMESSAGEFLAG> />Žó‚¯Žæ‚é<br />
+<input type="submit" name="submit" value="Šm”F"><br />
+</form>
+<hr />
+<a href="<TMPL_VAR URL_HOME>">$GVƒz[ƒ€</a>
+
+</body>
+</html>

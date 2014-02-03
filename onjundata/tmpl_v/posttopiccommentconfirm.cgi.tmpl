@@ -1,0 +1,48 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>“ü—ÍŠm”F</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<TMPL_IF TOPICTITLE>
+	<form method="post" action="<TMPL_VAR URL>">
+	<TMPL_IF SESSIONNAME>
+	<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+	</TMPL_IF>
+	<font color="#639ACE">¥</font>ƒtƒH[ƒ‰ƒ€–¼<br />
+	<TMPL_VAR FORUMNAME><br />
+	<font color="#639ACE">¥</font>ƒgƒsƒbƒN<br />
+	<TMPL_VAR TOPICTITLE><br />
+	<font color="#639ACE">¥</font>ƒRƒƒ“ƒg<br />
+	<TMPL_VAR BODY><br />
+
+	<TMPL_UNLESS MOBILE>
+	<TMPL_IF FILE1>
+		<font color="#639ACE">¥</font>ŽÊ^1<br />
+		<TMPL_VAR FILE1><br />
+	</TMPL_IF>
+	<TMPL_IF FILE2>
+		<font color="#639ACE">¥</font>ŽÊ^2<br />
+		<TMPL_VAR FILE2><br />
+	</TMPL_IF>
+	<TMPL_IF FILE3>
+		<font color="#639ACE">¥</font>ŽÊ^3<br />
+		<TMPL_VAR FILE3><br />
+	</TMPL_IF>
+	</TMPL_UNLESS>
+	<input type="submit" name="submit" value="‘—M">
+	<input type="submit" name="cancel" value="Ä“ü—Í">
+	</form>
+</TMPL_IF>
+<hr />
+<TMPL_IF TOPICTITLE>
+<a href="<TMPL_VAR TOPICURL>">$O!<TMPL_VAR TOPICTITLE></a><br />
+</TMPL_IF>
+<TMPL_IF FORUMNAME>
+<a href="<TMPL_VAR FORUMURL>">$Ge<TMPL_VAR FORUMNAME></a><br />
+</TMPL_IF>
+<a href="<TMPL_VAR URL_FORUMLIST>">$GeƒtƒH[ƒ‰ƒ€ˆê——</a><br />
+<a href="<TMPL_VAR URL_HOME>">$GVƒz[ƒ€</a>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+	<TMPL_IF URL_ONTAMAIMAGE>
+		<center>В®ВсВљВ№Бu<TMPL_VAR ONTAMANAME>Бv</center>
+		<TMPL_IF MSG>
+		<font color="red"><TMPL_VAR MSG></font><br />
+		</TMPL_IF>
+		<TMPL_VAR OWNERNAME>В≥ВсВћ<TMPL_VAR ONTAMANAME>В≈ВЈБB<br />
+		<center><img src="<TMPL_VAR URL_ONTAMAIMAGE>"></center>
+		<TMPL_IF URL_ONTAMAFOOD>
+			<a href="<TMPL_VAR URL_ONTAMAFOOD>">ГSГnГУВрВ†В∞Вй</a><br />
+		</TMPL_IF>
+		<TMPL_IF URL_ONTAMAGAME>
+			<a href="<TMPL_VAR URL_ONTAMAGAME>">В†ВїВ‘</a><br />
+		</TMPL_IF>
+		<TMPL_IF URL_DELETEONTAMA>
+			<a href="<TMPL_VAR URL_DELETEONTAMA>">В®ВсВљВ№ВрПЅВЈ</a><br />
+		</TMPL_IF>
+		<TMPL_IF URL_ONTAMAMANUAL>
+			<a href="<TMPL_VAR URL_ONTAMAMANUAL>">В®ВсВљВ№Г}ГjГЕГAГЛ</a><br />
+		</TMPL_IF>
+		<a href="<TMPL_VAR URL_ONTAMALIST>">ВЁВсВ»ВћВ®ВсВљВ№ВрМ©Вй</a><br />
+
+		<br />
+		<center><TMPL_VAR ONTAMANAME>ВћПуС‘</center>
+		<TMPL_IF ONTAMASTATUS>
+			<TMPL_LOOP ONTAMASTATUS>
+				<TMPL_VAR VALUE><br />
+			</TMPL_LOOP>
+		</TMPL_IF>
+		<TMPL_IF ONTAMALOGS>
+			<br />
+			<center><TMPL_VAR ONTAMANAME>УъЛL</center>
+			<TMPL_LOOP ONTAMALOGS>
+				<TMPL_VAR DATE>Бc<TMPL_VAR VALUE><br />
+			</TMPL_LOOP>
+		</TMPL_IF>
+	<TMPL_ELSE>
+		<center>В®ВсВљВ№</center>
+		В†В»ВљВћБuВ®ВсВљВ№БvВЌВ№ВЊВҐВ№ВєВсБB<br />
+		<br />
+		<a href="<TMPL_VAR URL_ONTAMAMANUAL>">БuВ®ВсВљВ№БvВ∆ВЌБH</a><br />
+		<br />
+		<a href="<TMPL_VAR URL_SETONTAMA>">БuВ®ВсВљВ№БvВћКJОn</a><br />
+		<a href="<TMPL_VAR URL_ONTAMALIST>">ВЁВсВ»ВћБuВ®ВсВљВ№БvВрМ©Вй</a><br />
+	</TMPL_IF>
+
+	<TMPL_IF ONTAMADEAD>
+		<center>В®ВсВљВ№Бu<TMPL_VAR ONTAMANAME>Бv</center>
+		<TMPL_VAR OWNERNAME>В≥ВсВћ<TMPL_VAR ONTAMANAME>В≈ВЈБB<br />
+		<center><img src="./res/corpse1.gif"></center>
+		<TMPL_IF URL_DELETEONTAMA>
+			<br />
+			<a href="<TMPL_VAR URL_DELETEONTAMA>">В®ВсВљВ№ВрПЅВЈ</a><br />
+		</TMPL_IF>
+		<br />
+		<TMPL_IF URL_ONTAMAMANUAL>
+			<a href="<TMPL_VAR URL_ONTAMAMANUAL>">В®ВсВљВ№Г}ГjГЕГAГЛ</a><br />
+		</TMPL_IF>
+		<a href="<TMPL_VAR URL_ONTAMALIST>">ВЁВсВ»ВћВ®ВсВљВ№ВрМ©Вй</a><br />
+
+		<br />
+		<center><TMPL_VAR ONTAMANAME>ВћПуС‘</center>
+		<TMPL_IF ONTAMASTATUS>
+			<TMPL_LOOP ONTAMASTATUS>
+				<TMPL_VAR VALUE><br />
+			</TMPL_LOOP>
+		</TMPL_IF>
+		<TMPL_IF ONTAMALOGS>
+			<br />
+			<center><TMPL_VAR ONTAMANAME>УъЛL</center>
+			<TMPL_LOOP ONTAMALOGS>
+				<TMPL_VAR DATE>Бc<TMPL_VAR VALUE><br />
+			</TMPL_LOOP>
+		</TMPL_IF>
+	</TMPL_IF>
+
+
+<hr />
+<a href="<TMPL_VAR URL_HOME>">$GVГzБ[ГА</a>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center><TMPL_VAR TITLE></center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<TMPL_IF INFO>
+<marquee><TMPL_VAR INFO></marquee>
+</TMPL_IF>
+<hr />
+<center>&#xE730; メニュー &#xE730;</center>
+<a href="<TMPL_VAR URL_RECEIVEMESSAGELIST>">&#xE6D3;メッセージ</a><TMPL_IF NEW_MESSAGE_COUNT><font color="red">(<TMPL_VAR NEW_MESSAGE_COUNT>件未読)</font></TMPL_IF><br />
+<a href="<TMPL_VAR URL_FORUMLIST>">&#xE670;フォーラム</a><br />
+<!--
+<a href="<TMPL_VAR URL_WRITEDIARY>">&#xE719;日記を書く</a><br />
+<a href="<TMPL_VAR URL_READDIARY>">&#xE683;日記を読む</a><br />
+-->
+<a href="<TMPL_VAR URL_MEMBERLIST>">&#xE73E;メンバー一覧</a><br />
+<a href="<TMPL_VAR URL_PROFILE>">&#xE6B1;プロフィール</a><br />
+<a href="<TMPL_VAR URL_OPTION>">&#xE718;設定変更</a><br />
+<TMPL_IF MOBILE>
+<a href="<TMPL_VAR URL_SETEASY>">&#xE6D8;かんたんログイン設定</a><br />
+</TMPL_IF>
+
+<TMPL_IF NEWS>
+	<hr />
+	<center>&#xE6DD; 新着情報 &#xE6DD;</center>
+	<TMPL_LOOP NEWS>
+		<TMPL_IF TOPICTITLE>
+			<TMPL_VAR DATE>…<a href="<TMPL_VAR URL>"><TMPL_VAR TOPICTITLE>(<TMPL_VAR COUNT>)</a> (<a href="<TMPL_VAR FORUMURL>"><TMPL_VAR FORUMNAME></a>)<br />
+		</TMPL_IF>
+	</TMPL_LOOP>
+	<div align="right">
+		<a href="<TMPL_VAR URL_NEWS>">もっと...</a>
+	</div>
+</TMPL_IF>
+<TMPL_IF NEWMEMBERS>
+	<hr />
+	<center>&#xE6B1; 新しいメンバー &#xE6B1;</center>
+	<TMPL_LOOP NEWMEMBERS>
+		<TMPL_VAR DATE>…<a href="<TMPL_VAR URL>"><TMPL_VAR NAME></a><br />
+	</TMPL_LOOP>
+</TMPL_IF>
+<TMPL_IF ONLINEMEMBERS>
+	<hr />
+	<center>&#xE6B8; オンライン &#xE6B8;</center>
+	<TMPL_LOOP ONLINEMEMBERS>
+		<a href="<TMPL_VAR URL>"><TMPL_VAR NAME></a>(<TMPL_VAR PAGETITLE>)<br />
+	</TMPL_LOOP>
+</TMPL_IF>
+<hr />
+<a href="<TMPL_VAR URL_LOGOUT>">&#xE714;ログアウト</a>
+<hr />
+<div align="right">&copy;sawasige</div>
+</body>
+</html>

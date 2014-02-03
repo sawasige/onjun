@@ -1,0 +1,87 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>プロフィール</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<TMPL_IF USER>
+
+	<TMPL_IF URL_SENDMESSAGE>
+	<a href="<TMPL_VAR URL_SENDMESSAGE>">メッセージを送る</a><br />
+	</TMPL_IF>
+	<TMPL_IF URL_EDITPROFILE>
+	<a href="<TMPL_VAR URL_EDITPROFILE>">プロフィール変更</a><br />
+	</TMPL_IF>
+	<dl>
+	<dt>ユーザー名</dt>
+	<dd><TMPL_VAR USER></dd>
+	<dt>本名</dt>
+	<TMPL_IF REALNAME>
+	<dd><TMPL_VAR REALNAME></dd>
+	<TMPL_ELSE>
+	<dd>（非公開）</dd>
+	</TMPL_IF>
+	<dt>誕生日</dt>
+	<TMPL_IF BIRTHDAY>
+	<dd><TMPL_VAR BIRTHDAY></dd>
+	<TMPL_ELSE>
+	<dd>（非公開）</dd>
+	</TMPL_IF>
+	<dt>性別</dt>
+	<TMPL_IF SEX>
+	<dd><TMPL_VAR SEX></dd>
+	<TMPL_ELSE>
+	<dd>（非公開）</dd>
+	</TMPL_IF>
+	<dt>血液型</dt>
+	<TMPL_IF BLOOD>
+	<dd><TMPL_VAR BLOOD></dd>
+	<TMPL_ELSE>
+	<dd>（非公開）</dd>
+	</TMPL_IF>
+	<dt>職業</dt>
+	<TMPL_IF JOB>
+	<dd><TMPL_VAR JOB></dd>
+	<TMPL_ELSE>
+	<dd>（非公開）</dd>
+	</TMPL_IF>
+	<dt>楽器</dt>
+	<TMPL_IF PART>
+	<dd><TMPL_VAR PART></dd>
+	<TMPL_ELSE>
+	<dd>（非公開）</dd>
+	</TMPL_IF>
+	<dt>住所</dt>
+	<TMPL_IF PLACE>
+	<dd><TMPL_VAR PLACE></dd>
+	<TMPL_ELSE>
+	<dd>（非公開）</dd>
+	</TMPL_IF>
+	<dt>期</dt>
+	<TMPL_IF AGE>
+	<dd><TMPL_VAR AGE></dd>
+	<TMPL_ELSE>
+	<dd>（非公開）</dd>
+	</TMPL_IF>
+	<dt>自己紹介</dt>
+	<TMPL_IF NOTE>
+	<dd><TMPL_VAR NOTE></dd>
+	<TMPL_ELSE>
+	<dd>（非公開）</dd>
+	</TMPL_IF>
+
+	<TMPL_IF LASTTIME>
+	<dt>最終ログイン</dt>
+	<dd><TMPL_VAR LASTTIME></dd>
+	</TMPL_IF>
+	<TMPL_IF USERAGENT>
+	<dt>最終USER_AGENT</dt>
+	<dd><TMPL_VAR USERAGENT></dd>
+	</TMPL_IF>
+	</dl>
+</TMPL_IF>
+<hr />
+<a href="<TMPL_VAR URL_HOME>"><img localsrc="93">ホーム</a>
+
+</body>
+</html>

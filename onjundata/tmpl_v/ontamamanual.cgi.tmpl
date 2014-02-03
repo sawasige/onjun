@@ -1,0 +1,27 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>‚¨‚ñ‚½‚Ü‚Æ‚ÍH</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+
+	<div>
+	u‚¨‚ñ‚½‚Üv‚Æ‚ÍA<TMPL_VAR TITLE> ‚Ì’†‚ÅŽ”‚¤A‚ ‚È‚½‚¾‚¯‚Ìƒyƒbƒg‚Å‚·B<br />
+	<img src="./res/egg1.gif"><br />
+	u‚¨‚ñ‚½‚Üv‚ðŽn‚ß‚é‚ÆA‚ ‚È‚½‚É‚½‚Ü‚²‚ª‚í‚½‚³‚ê‚Ü‚·B<br />
+	‚±‚Ì‚½‚Ü‚²‚ÍAŽ”‚¢Žå‚Ìs“®‚É‚æ‚Á‚Ä¬’·‚ª•Ï‚í‚è‚Ü‚·B<br />
+	<br />
+	u‚¨‚ñ‚½‚Üv‚Í‚½‚Ü‚É‚Ð‚Æ‚±‚Æ‚¾‚¯“ú‹L‚ð‚Â‚¯‚é‚±‚Æ‚ª‚ ‚è‚Ü‚·B<br />
+	¬’·‚ªi‚Þ‚Æ“ú‹L‚ð‚Â‚¯‚é‰ñ”‚ª‚ ‚ª‚èA“ú‹L‚Ì“à—e‚à•Ï‚í‚è‚Ü‚·B<br />
+	<br />
+	<TMPL_IF URL_SELFONTAMAIMAGE>
+		<a href="<TMPL_VAR URL_ONTAMA>">‚à‚Ç‚é<br />
+	<TMPL_ELSE>
+		<a href="<TMPL_VAR URL_SETONTAMA>">u‚¨‚ñ‚½‚Üv‚ðŠJŽn‚·‚é</a><br />
+	</TMPL_IF>
+	</div>
+
+<hr />
+<a href="<TMPL_VAR URL_HOME>">$GVƒz[ƒ€</a>
+</body>
+</html>

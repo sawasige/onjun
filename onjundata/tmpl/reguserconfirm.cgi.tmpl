@@ -1,0 +1,92 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/offlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_login.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title">ユーザー登録</div>
+	<div class="block_body">
+		<form method="post" action="<TMPL_VAR URL>">
+		<TMPL_IF SESSIONNAME>
+		<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+		</TMPL_IF>
+
+		以下の情報でユーザー登録を行います。
+		<table cellspacing="1">
+		<tr><th>ユーザー名</dh>
+		<td><TMPL_VAR USER></td></tr>
+		<tr><th>パスワード</dh>
+		<td><TMPL_VAR PASS></td></tr>
+		<tr><th>メールアドレス</dh>
+		<td><TMPL_VAR MAIL></td></tr>
+		<tr><th>本名</dh>
+		<TMPL_IF REALNAME>
+		<td><TMPL_VAR REALNAME></td></tr>
+		<TMPL_ELSE>
+		<td>（未入力）</td></tr>
+		</TMPL_IF>
+		<tr><th>誕生日</dh>
+		<TMPL_IF BIRTHDAY>
+		<td><TMPL_VAR BIRTHDAY></td></tr>
+		<TMPL_ELSE>
+		<td>（未入力）</td></tr>
+		</TMPL_IF>
+		<tr><th>性別</dh>
+		<TMPL_IF SEX>
+		<td><TMPL_VAR SEX></td></tr>
+		<TMPL_ELSE>
+		<td>（未選択）</td></tr>
+		</TMPL_IF>
+		<tr><th>血液型</dh>
+		<TMPL_IF BLOOD>
+		<td><TMPL_VAR BLOOD></td></tr>
+		<TMPL_ELSE>
+		<td>（未選択）</td></tr>
+		</TMPL_IF>
+		<tr><th>職業</dh>
+		<TMPL_IF JOB>
+		<td><TMPL_VAR JOB></td></tr>
+		<TMPL_ELSE>
+		<td>（未入力）</td></tr>
+		</TMPL_IF>
+		<tr><th>楽器</dh>
+		<TMPL_IF PART>
+		<td><TMPL_VAR PART></td></tr>
+		<TMPL_ELSE>
+		<td>（未入力）</td></tr>
+		</TMPL_IF>
+		<tr><th>住所</dh>
+		<TMPL_IF PLACE>
+		<td><TMPL_VAR PLACE></td></tr>
+		<TMPL_ELSE>
+		<td>（未入力）</td></tr>
+		</TMPL_IF>
+		<tr><th>期</dh>
+		<TMPL_IF AGE>
+		<td><TMPL_VAR AGE></td></tr>
+		<TMPL_ELSE>
+		<td>（未選択）</td></tr>
+		</TMPL_IF>
+		<tr><th>自己紹介</dh>
+		<TMPL_IF NOTE>
+		<td><TMPL_VAR NOTE></td></tr>
+		<TMPL_ELSE>
+		<td>（未入力）</td></tr>
+		</TMPL_IF>
+		</table>
+		<input type="submit" name="submit" value="送信">
+		<input type="submit" name="cancel" value="再入力">
+		</form>
+
+	</div>
+
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

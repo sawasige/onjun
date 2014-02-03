@@ -1,0 +1,92 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title"><TMPL_VAR USER>さんのプロフィール</div>
+	<div class="block_body">
+	<TMPL_IF URL_SENDMESSAGE>
+	<a href="<TMPL_VAR URL_SENDMESSAGE>">メッセージを送る</a><br />
+	</TMPL_IF>
+	<TMPL_IF URL_EDITPROFILE>
+	<a href="<TMPL_VAR URL_EDITPROFILE>">プロフィール修正</a><br />
+	</TMPL_IF>
+	<table cellspacing="1">
+	<tr><th>ユーザー名</th>
+	<td><TMPL_VAR USER></td></tr>
+	<tr><th>本名</th>
+	<TMPL_IF REALNAME>
+	<td><TMPL_VAR REALNAME></td></tr>
+	<TMPL_ELSE>
+	<td>（非公開）</td></tr>
+	</TMPL_IF>
+	<tr><th>誕生日</th>
+	<TMPL_IF BIRTHDAY>
+	<td><TMPL_VAR BIRTHDAY></td></tr>
+	<TMPL_ELSE>
+	<td>（非公開）</td></tr>
+	</TMPL_IF>
+	<tr><th>性別</th>
+	<TMPL_IF SEX>
+	<td><TMPL_VAR SEX></td></tr>
+	<TMPL_ELSE>
+	<td>（非公開）</td></tr>
+	</TMPL_IF>
+	<tr><th>血液型</th>
+	<TMPL_IF BLOOD>
+	<td><TMPL_VAR BLOOD></td></tr>
+	<TMPL_ELSE>
+	<td>（非公開）</td></tr>
+	</TMPL_IF>
+	<tr><th>職業</th>
+	<TMPL_IF JOB>
+	<td><TMPL_VAR JOB></td></tr>
+	<TMPL_ELSE>
+	<td>（非公開）</td></tr>
+	</TMPL_IF>
+	<tr><th>楽器</th>
+	<TMPL_IF PART>
+	<td><TMPL_VAR PART></td></tr>
+	<TMPL_ELSE>
+	<td>（非公開）</td></tr>
+	</TMPL_IF>
+	<tr><th>住所</th>
+	<TMPL_IF PLACE>
+	<td><TMPL_VAR PLACE></td></tr>
+	<TMPL_ELSE>
+	<td>（非公開）</td></tr>
+	</TMPL_IF>
+	<tr><th>期</th>
+	<TMPL_IF AGE>
+	<td><TMPL_VAR AGE></td></tr>
+	<TMPL_ELSE>
+	<td>（非公開）</td></tr>
+	</TMPL_IF>
+	<tr><th>自己紹介</th>
+	<TMPL_IF NOTE>
+	<td><TMPL_VAR NOTE></td></tr>
+	<TMPL_ELSE>
+	<td>（非公開）</td></tr>
+	</TMPL_IF>
+
+	<TMPL_IF LASTTIME>
+	<tr><th>最終ログイン</th>
+	<td><TMPL_VAR LASTTIME></td></tr>
+	</TMPL_IF>
+	<TMPL_IF USERAGENT>
+	<tr><th>最終USER_AGENT</th>
+	<td><TMPL_VAR USERAGENT></td></tr>
+	</TMPL_IF>
+	</table>
+	</div>
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

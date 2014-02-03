@@ -1,0 +1,65 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>削除確認</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<TMPL_IF FORUMNAME>
+	<form method="post" action="<TMPL_VAR URL>">
+	<input type="hidden" name="topiccommentid" value="<TMPL_VAR TOPICCOMMENTID>" />
+	<TMPL_IF SESSIONNAME>
+	<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+	</TMPL_IF>
+	フォーラム「<TMPL_VAR FORUMNAME>」、トピック「<TMPL_VAR TOPICTITLE>」の次のコメントを削除します。よろしいですか？<br />
+	<font color="#639ACE">▼</font>コメント<br />
+	<TMPL_VAR TOPICCOMMENTBODY><br />
+
+	<font color="#639ACE">▼</font>写真1<br />
+	<TMPL_IF FILE1LARGEURL>
+		<TMPL_IF FILE1SMALLURL>
+			<a href="<TMPL_VAR FILE1LARGEURL>"><img src="<TMPL_VAR FILE1SMALLURL>">拡大</a><br />
+		<TMPL_ELSE>
+			<img src="<TMPL_VAR FILE1LARGEURL>"><br />
+		</TMPL_IF>
+	<TMPL_ELSE>
+	なし<br />
+	</TMPL_IF>
+
+	<font color="#639ACE">▼</font>写真2<br />
+	<TMPL_IF FILE2LARGEURL>
+		<TMPL_IF FILE2SMALLURL>
+			<a href="<TMPL_VAR FILE2LARGEURL>"><img src="<TMPL_VAR FILE2SMALLURL>">拡大</a><br />
+		<TMPL_ELSE>
+			<img src="<TMPL_VAR FILE2LARGEURL>"><br />
+		</TMPL_IF>
+	<TMPL_ELSE>
+	なし<br />
+	</TMPL_IF>
+
+	<font color="#639ACE">▼</font>写真3<br />
+	<TMPL_IF FILE3LARGEURL>
+		<TMPL_IF FILE3SMALLURL>
+			<a href="<TMPL_VAR FILE3LARGEURL>"><img src="<TMPL_VAR FILE3SMALLURL>">拡大</a><br />
+		<TMPL_ELSE>
+			<img src="<TMPL_VAR FILE3LARGEURL>"><br />
+		</TMPL_IF>
+	<TMPL_ELSE>
+	なし<br />
+	</TMPL_IF>
+
+	<input type="submit" name="submit" value="削除">
+	<input type="submit" name="cancel" value="キャンセル">
+	</form>
+</TMPL_IF>
+<hr />
+<TMPL_IF TOPICTITLE>
+<a href="<TMPL_VAR TOPICURL>"><img localsrc="56"><TMPL_VAR TOPICTITLE></a><br />
+</TMPL_IF>
+<TMPL_IF FORUMNAME>
+<a href="<TMPL_VAR FORUMURL>"><img localsrc="65"><TMPL_VAR FORUMNAME></a><br />
+</TMPL_IF>
+<a href="<TMPL_VAR URL_FORUMLIST>"><img localsrc="65">フォーラム一覧</a><br />
+<a href="<TMPL_VAR URL_HOME>"><img localsrc="93">ホーム</a>
+
+</body>
+</html>

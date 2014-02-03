@@ -1,0 +1,24 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>“ü—ÍŠm”F</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+
+	<form method="post" action="<TMPL_VAR URL>">
+		<input type="hidden" name="submit" value="1"><br />
+		<TMPL_IF SESSIONNAME>
+		<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+		</TMPL_IF>
+		‚ ‚È‚½‚Ì‚¨‚ñ‚½‚Ü‚Ì–¼‘O‚Íu<TMPL_VAR ONTAMANAME>v‚Å‚æ‚ë‚µ‚¢‚Å‚·‚©H<br />
+		<center>
+		<input type="submit" name="submit" value="‚Í‚¢">
+		<input type="submit" name="cancel" value="‚¢‚¢‚¦">
+		</center>
+	</form>
+
+<hr />
+<a href="<TMPL_VAR URL_ONTAMA>">$QC‚¨‚ñ‚½‚Ü</a><br />
+<a href="<TMPL_VAR URL_HOME>">$GVƒz[ƒ€</a>
+</body>
+</html>

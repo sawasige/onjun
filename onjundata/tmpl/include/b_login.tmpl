@@ -1,0 +1,18 @@
+	<div class="block_title">ログイン</div>
+	<div class="block_body">
+	<form method="post" action="login.cgi">
+	<TMPL_IF SESSIONNAME>
+	<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+	</TMPL_IF>
+	ユーザー名:<br />
+	<input type="text" class="loginuser" name="user" maxsize="25" value="<TMPL_VAR USER>"><br />
+	パスワード:<br />
+	<input type="password" class="loginpass" name="pass"  maxsize="25" value="<TMPL_VAR PASS>"><br />
+	<input type="checkbox" name="saveuser" id="saveuser" <TMPL_IF USER>checked</TMPL_IF>><label for="saveuser">ユーザー名の保存</label><br />
+	<input type="submit" name="login" value="ログイン">
+	</form>
+	<br />
+	初めての方は<br />
+	<a href="<TMPL_VAR URL_REGUSER>">ユーザー登録</a><br />
+	<font color="red"><blink>※</blink></font> 旧 onjun.net 会員も再登録してください。<br />
+	</div>

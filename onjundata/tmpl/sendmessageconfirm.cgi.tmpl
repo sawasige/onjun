@@ -1,0 +1,38 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title">メッセージ送信確認</div>
+	<div class="block_body">
+		<TMPL_IF RECEIVER_USERID>
+			<form method="post" action="<TMPL_VAR NAME=URL>">
+			<TMPL_IF SESSIONNAME>
+			<input type="hidden" name="<TMPL_VAR NAME=SESSIONNAME>" value="<TMPL_VAR NAME=SESSIONID>" />
+			</TMPL_IF>
+			<TMPL_IF REPLYID>
+				<input type="hidden" name="replyid" value="<TMPL_VAR NAME=REPLYID>" />
+			</TMPL_IF>
+			<input type="hidden" name="receiver_userid" value="<TMPL_VAR NAME=RECEIVER_USERID>" />
+			<font color="#639ACE">▼</font>宛先<br />
+			<TMPL_VAR NAME=RECEIVER_NAME><br />
+			<font color="#639ACE">▼</font>サブジェクト<br />
+			<TMPL_VAR NAME=SUBJECT><br />
+			<font color="#639ACE">▼</font>本文<br />
+			<TMPL_VAR BODY><br />
+			<input type="submit" name="submit" value="送信">
+			<input type="submit" name="cancel" value="再入力">
+			</form>
+		</TMPL_IF>
+	</div>
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

@@ -1,0 +1,56 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center><TMPL_VAR TITLE></center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<TMPL_IF INFO>
+<marquee><TMPL_VAR INFO></marquee>
+</TMPL_IF>
+<hr />
+<center><img localsrc="143"> メニュー <img localsrc="143"></center>
+<a href="<TMPL_VAR URL_RECEIVEMESSAGELIST>"><img localsrc="129">メッセージ</a><TMPL_IF NEW_MESSAGE_COUNT><font color="red">(<TMPL_VAR NEW_MESSAGE_COUNT>件未読)</font></TMPL_IF><br />
+<a href="<TMPL_VAR URL_FORUMLIST>"><img localsrc="65">フォーラム</a><br />
+<!--
+<a href="<TMPL_VAR URL_WRITEDIARY>"><img localsrc="149">日記を書く</a><br />
+<a href="<TMPL_VAR URL_READDIARY>"><img localsrc="122">日記を読む</a><br />
+-->
+<a href="<TMPL_VAR URL_MEMBERLIST>"><img localsrc="377">メンバー一覧</a><br />
+<a href="<TMPL_VAR URL_PROFILE>"><img localsrc="50">プロフィール</a><br />
+<a href="<TMPL_VAR URL_OPTION>"><img localsrc="152">設定変更</a><br />
+<TMPL_IF MOBILE>
+<a href="<TMPL_VAR URL_SETEASY>"><img localsrc="145">かんたんログイン設定</a><br />
+</TMPL_IF>
+
+<TMPL_IF NEWS>
+	<hr />
+	<center><img localsrc="1"> 新着情報 <img localsrc="1"></center>
+	<TMPL_LOOP NEWS>
+		<TMPL_IF TOPICTITLE>
+			<TMPL_VAR DATE>…<a href="<TMPL_VAR URL>"><TMPL_VAR TOPICTITLE>(<TMPL_VAR COUNT>)</a> (<a href="<TMPL_VAR FORUMURL>"><TMPL_VAR FORUMNAME></a>)<br />
+		</TMPL_IF>
+	</TMPL_LOOP>
+	<div align="right">
+		<a href="<TMPL_VAR URL_NEWS>">もっと...</a>
+	</div>
+</TMPL_IF>
+<TMPL_IF NEWMEMBERS>
+	<hr />
+	<center><img localsrc="50"> 新しいメンバー <img localsrc="50"></center>
+	<TMPL_LOOP NEWMEMBERS>
+		<TMPL_VAR DATE>…<a href="<TMPL_VAR URL>"><TMPL_VAR NAME></a><br />
+	</TMPL_LOOP>
+</TMPL_IF>
+<TMPL_IF ONLINEMEMBERS>
+	<hr />
+	<center><img localsrc="164"> オンライン <img localsrc="164"></center>
+	<TMPL_LOOP ONLINEMEMBERS>
+		<a href="<TMPL_VAR URL>"><TMPL_VAR NAME></a>(<TMPL_VAR PAGETITLE>)<br />
+	</TMPL_LOOP>
+</TMPL_IF>
+<hr />
+<a href="<TMPL_VAR URL_LOGOUT>"><img localsrc="138">ログアウト</a>
+<hr />
+<div align="right"><img localsrc="81">sawasige</div>
+</body>
+</html>

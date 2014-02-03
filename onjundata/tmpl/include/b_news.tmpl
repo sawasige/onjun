@@ -1,0 +1,20 @@
+	<TMPL_IF NEWS>
+		<div class="block_title">フォーラムの最新の書き込み</div>
+		<div class="block_body">
+			<table class="topicnews" cellspacing="1" width="100%">
+			<tr><th width="70">フォーラム</th><th>トピック</th><th width="60">コメント数</th><th width="70">投稿時間</th><th width="60">投稿者</th></tr>
+			<TMPL_LOOP NEWS>
+				<tr>
+				<td><a href="<TMPL_VAR FORUMURL>"><TMPL_VAR FORUMNAME></a></td>
+				<td><a href="<TMPL_VAR URL>"><TMPL_VAR TOPICTITLE></a></td>
+				<td><TMPL_VAR COUNT></td>
+				<td><TMPL_VAR TIME></td>
+				<td><a href="<TMPL_VAR LASTUSERURL>"><TMPL_VAR LASTUSERNAME></a></td>
+				</tr>
+			</TMPL_LOOP>
+			</table>
+			<div class="pagelink">
+			<a href="<TMPL_VAR URL_NEWS>">もっと...</a>
+			</div>
+		</div>
+	</TMPL_IF>

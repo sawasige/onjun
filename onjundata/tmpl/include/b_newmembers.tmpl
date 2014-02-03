@@ -1,0 +1,14 @@
+	<TMPL_IF NEWMEMBERS>
+		<div class="block_title">新しいメンバー</div>
+		<div class="block_body">
+			<table cellspacing="1" width="100%">
+			<tr><th>登録日</th><th>ユーザー名</th></tr>
+			<TMPL_LOOP NEWMEMBERS>
+			<tr><td class="date"><TMPL_VAR DATE></td><td><a href="<TMPL_VAR URL>"><TMPL_VAR NAME></a></td></tr>
+			</TMPL_LOOP>
+			</table>
+			<div class="pagelink">
+			<a href="<TMPL_VAR URL_MEMBERLIST>">もっと...</a>
+			</div>
+		</div>
+	</TMPL_IF>

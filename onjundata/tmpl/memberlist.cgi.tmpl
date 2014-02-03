@@ -1,0 +1,76 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title">メンバー検索</div>
+	<div class="block_body">
+	<form method="post" action="<TMPL_VAR URL>">
+	<TMPL_IF SESSIONNAME>
+	<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+	</TMPL_IF>
+	<table cellspacing="1">
+	<tr><th>職業</th>
+	<td><input type="text" name="job" maxsize=60 value="<TMPL_VAR JOB>" istyle=1></td></tr>
+	<tr><th>パート（楽器）</th>
+	<td><input type="text" name="part" maxsize=60 value="<TMPL_VAR PART>" istyle=1></td></tr>
+	<tr><th>期</th>
+	<td>
+	<select name="age">
+	<TMPL_LOOP AGE>
+	<option value="<TMPL_VAR AGEVALUE>" <TMPL_VAR AGESELECTED>><TMPL_VAR AGELABEL></TMPL_LOOP>
+	</select>
+	</td></tr>
+	</table>
+	<input type="submit" name="submit" value="検索"><br />
+	</form>
+	</div>
+
+	<TMPL_IF MEMBERS>
+	<div class="block_title">メンバー一覧</div>
+	<div class="block_body">
+	<table cellspacing="1" width="100%">
+	<tr><th>登録日</th><th>ユーザー名</th><th>楽器</th><th>期</th></tr>
+	<TMPL_LOOP MEMBERS>
+	<tr>
+		<td><TMPL_VAR DATE></td>
+		<td><a href="<TMPL_VAR MEMBERURL>"><TMPL_VAR MEMBERNAME></a></td>
+		<td><TMPL_VAR MEMBERPART></td>
+		<td><TMPL_VAR MEMBERAGE></td>
+	</tr>
+	</TMPL_LOOP>
+	</table>
+
+	<TMPL_IF NOWPAGENOLABEL>
+		<div class="pagelink">
+			<!-- ページ -->
+			<TMPL_IF PREVPAGEURL>
+			<a href="<TMPL_VAR PREVPAGEURL>">←</a>
+			</TMPL_IF>
+			<TMPL_LOOP BACKPAGELOOP>
+			<a href="<TMPL_VAR BACKPAGEURL>"><TMPL_VAR BACKPAGELABEL></a>
+			</TMPL_LOOP>
+			<TMPL_IF NOWPAGENOLABEL>
+			<blink><b><TMPL_VAR NOWPAGENOLABEL></b></blink>
+			</TMPL_IF>
+			<TMPL_LOOP FORWARDPAGELOOP>
+			<a href="<TMPL_VAR FORWARDPAGEURL>"><TMPL_VAR FORWARDPAGELABEL></a>
+			</TMPL_LOOP>
+			<TMPL_IF NEXTPAGEURL>
+			<a href="<TMPL_VAR NEXTPAGEURL>">→</a>
+			</TMPL_IF>
+		</div>
+	</TMPL_IF>
+	</div>
+	</TMPL_IF>
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

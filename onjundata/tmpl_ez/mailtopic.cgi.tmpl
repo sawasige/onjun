@@ -1,0 +1,22 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>新規トピック作成</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<TMPL_IF FORUMNAME>
+下のリンクからメールを送信してください。写真は 3 枚まで添付することができます。<br />
+<font size="-1"><font color="red"><blink>※</blink></font> メール件名は変更しないでください。メール本文の1行目がトピックのタイトルになりますので、かならず改行してから本文を書いてください。</font><br />
+<a href="<TMPL_VAR MAILTOTOPIC>">メール送信</a><br />
+<hr />
+メールでの投稿が完了したら、投稿状態を確認してください。<br />
+<a href="<TMPL_VAR URL_RECEIVEMAIL>">メール投稿確認</a><br />
+<hr />
+<a href="<TMPL_VAR URL_POSTTOPIC>"><img localsrc="508">戻る</a><br />
+<a href="<TMPL_VAR FORUMURL>"><img localsrc="65"><TMPL_VAR FORUMNAME></a><br />
+</TMPL_IF>
+<a href="<TMPL_VAR URL_FORUMLIST>"><img localsrc="65">フォーラム一覧</a><br />
+<a href="<TMPL_VAR URL_HOME>"><img localsrc="93">ホーム</a>
+
+</body>
+</html>

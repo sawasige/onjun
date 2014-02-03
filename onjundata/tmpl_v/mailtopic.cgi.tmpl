@@ -1,0 +1,22 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>V‹KƒgƒsƒbƒNì¬</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<TMPL_IF FORUMNAME>
+‰º‚ÌƒŠƒ“ƒN‚©‚çƒ[ƒ‹‚ð‘—M‚µ‚Ä‚­‚¾‚³‚¢BŽÊ^‚Í 3 –‡‚Ü‚Å“Y•t‚·‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B<br />
+<font size="-1"><font color="red"><blink>¦</blink></font> ƒ[ƒ‹Œ–¼‚Í•ÏX‚µ‚È‚¢‚Å‚­‚¾‚³‚¢Bƒ[ƒ‹–{•¶‚Ì1s–Ú‚ªƒgƒsƒbƒN‚Ìƒ^ƒCƒgƒ‹‚É‚È‚è‚Ü‚·‚Ì‚ÅA‚©‚È‚ç‚¸‰üs‚µ‚Ä‚©‚ç–{•¶‚ð‘‚¢‚Ä‚­‚¾‚³‚¢B</font><br />
+<a href="<TMPL_VAR MAILTOTOPIC>">ƒ[ƒ‹‘—M</a><br />
+<hr />
+ƒ[ƒ‹‚Å‚Ì“Še‚ªŠ®—¹‚µ‚½‚çA“Šeó‘Ô‚ðŠm”F‚µ‚Ä‚­‚¾‚³‚¢B<br />
+<a href="<TMPL_VAR URL_RECEIVEMAIL>">ƒ[ƒ‹“ŠeŠm”F</a><br />
+<hr />
+<a href="<TMPL_VAR URL_POSTTOPIC>">$O7–ß‚é</a><br />
+<a href="<TMPL_VAR FORUMURL>">$Ge<TMPL_VAR FORUMNAME></a><br />
+</TMPL_IF>
+<a href="<TMPL_VAR URL_FORUMLIST>">$GeƒtƒH[ƒ‰ƒ€ˆê——</a><br />
+<a href="<TMPL_VAR URL_HOME>">$GVƒz[ƒ€</a>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title"><TMPL_VAR NAME=USER>さんのプロフィール修正</div>
+	<div class="block_body">
+	<form method="post" action="<TMPL_VAR URL>">
+	<TMPL_IF SESSIONNAME>
+	<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+	</TMPL_IF>
+	<TMPL_IF USERID>
+	<input type="hidden" name="userid" value="<TMPL_VAR USERID>" />
+	</TMPL_IF>
+	
+	<font color="#639ACE">▼</font>以下は必須項目です。
+	<table cellspacing="1">
+
+	<tr><th>ユーザー名<font color="#ff00ff">※</font></th>
+	<td><input type="text" name="user" maxsize="25" value="<TMPL_VAR USER>"></td></tr>
+	<tr><th>パスワード<font color="#ff00ff">※</font></th>
+	<td><input type="password" name="pass" maxsize="12" value="<TMPL_VAR PASS>"></td></tr>
+	<tr><th>メールアドレス<font color="#ff00ff">※</font></th>
+	<td><input type="text" name="mail" maxsize="60" value="<TMPL_VAR MAIL>"></td></tr>
+	</table>
+
+
+	<font color="#639ACE">▼</font>以下は任意項目です。
+	<table cellspacing="1">
+	<tr><th>本名</th>
+	<td><input type="text" name="realname" maxsize=60 value="<TMPL_VAR REALNAME>"></td></tr>
+	<tr><th>誕生日</th>
+	<td>1974年9月3日→19740903<br /><input type="text" name="birthday" size=8 maxsize=8 value="<TMPL_VAR BIRTHDAY>"></td></tr>
+	<tr><th>性別</th>
+	<td>
+	<select name="sex">
+	<TMPL_LOOP SEX>
+	<option value="<TMPL_VAR SEXVALUE>" <TMPL_VAR SEXSELECTED>><TMPL_VAR SEXLABEL>
+	</TMPL_LOOP>
+	</select>
+	</td></tr>
+	<tr><th>血液型</th>
+	<td>
+	<select name="blood">
+	<TMPL_LOOP BLOOD>
+	<option value="<TMPL_VAR BLOODVALUE>" <TMPL_VAR BLOODSELECTED>><TMPL_VAR BLOODLABEL>
+	</TMPL_LOOP>
+	</select>
+	</td></tr>
+	<tr><th>職業</th>
+	<td><input type="text" name="job" maxsize=60 value="<TMPL_VAR JOB>"></td></tr>
+	<tr><th>楽器</th>
+	<td><input type="text" name="part" maxsize=60 value="<TMPL_VAR PART>"></td></tr>
+	<tr><th>住所</th>
+	<td><input type="text" name="place" maxsize=60 value="<TMPL_VAR PLACE>"></td></tr>
+	<tr><th>期</th>
+	<td>
+	<select name="age">
+	<TMPL_LOOP AGE>
+	<option value="<TMPL_VAR AGEVALUE>" <TMPL_VAR AGESELECTED>><TMPL_VAR AGELABEL></TMPL_LOOP>
+	</select>
+	</td></tr>
+	<tr><th>自己紹介</th>
+	<td>
+	<textarea rows="10" cols="40" name="note"><TMPL_VAR NOTE></textarea>
+	</td></tr>
+	</table>
+	<input type="submit" name="submit" value="確認"><br />
+	</form>
+	</div>
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

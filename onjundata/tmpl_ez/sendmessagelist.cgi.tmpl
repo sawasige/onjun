@@ -1,0 +1,44 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>送信箱</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<TMPL_IF MESSAGES>
+	<TMPL_LOOP MESSAGES>
+		<hr size="1" />
+		<img localsrc="129"><a href="<TMPL_VAR URL>"><TMPL_VAR SUBJECT></a><br />
+		<img localsrc="50"><a href="<TMPL_VAR RECEIVERURL>"><TMPL_VAR RECEIVER></a><br />
+		<img localsrc="46"><TMPL_VAR TIME><br />
+	</TMPL_LOOP>
+
+	<TMPL_IF NOWPAGENOLABEL>
+		<TMPL_IF PREVPAGEURL>
+		<hr size="1" />
+		<a href="<TMPL_VAR PREVPAGEURL>">←</a>
+		</TMPL_IF>
+		<TMPL_LOOP BACKPAGELOOP>
+		<a href="<TMPL_VAR BACKPAGEURL>"><TMPL_VAR BACKPAGELABEL></a>
+		</TMPL_LOOP>
+		<TMPL_IF NOWPAGENOLABEL>
+		<blink><TMPL_VAR NOWPAGENOLABEL></blink>
+		</TMPL_IF>
+		<TMPL_LOOP FORWARDPAGELOOP>
+		<a href="<TMPL_VAR FORWARDPAGEURL>"><TMPL_VAR FORWARDPAGELABEL></a>
+		</TMPL_LOOP>
+		<TMPL_IF NEXTPAGEURL>
+		<a href="<TMPL_VAR NEXTPAGEURL>">→</a>
+		</TMPL_IF>
+		<br />
+	</TMPL_IF>
+<TMPL_ELSE>
+	送信済みメッセージはありません。<br />
+</TMPL_IF>
+<div>
+<hr size="1" />
+<a href="<TMPL_VAR URL_RECEIVEMESSAGELIST>"><img localsrc="129">受信箱</a>
+</div>
+<hr />
+<a href="<TMPL_VAR URL_HOME>"><img localsrc="93">ホーム</a>
+</body>
+</html>

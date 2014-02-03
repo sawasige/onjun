@@ -1,0 +1,43 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>フォーラムの新着</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+
+
+<TMPL_IF MORENEWS>
+	<TMPL_LOOP MORENEWS>
+		<TMPL_IF TOPICTITLE>
+			<TMPL_VAR DATE>…<a href="<TMPL_VAR URL>"><TMPL_VAR TOPICTITLE>(<TMPL_VAR COUNT>)</a> (<a href="<TMPL_VAR FORUMURL>"><TMPL_VAR FORUMNAME></a>)<br />
+		</TMPL_IF>
+	</TMPL_LOOP>
+	
+	<TMPL_IF NOWPAGENOLABEL>
+		<hr size="1">
+		<!-- ページ -->
+		<TMPL_IF PREVPAGEURL>
+		<a href="<TMPL_VAR PREVPAGEURL>">←</a>
+		</TMPL_IF>
+		<TMPL_LOOP BACKPAGELOOP>
+		<a href="<TMPL_VAR BACKPAGEURL>"><TMPL_VAR BACKPAGELABEL></a>
+		</TMPL_LOOP>
+		<TMPL_IF NOWPAGENOLABEL>
+		<blink><TMPL_VAR NOWPAGENOLABEL></blink>
+		</TMPL_IF>
+		<TMPL_LOOP FORWARDPAGELOOP>
+		<a href="<TMPL_VAR FORWARDPAGEURL>"><TMPL_VAR FORWARDPAGELABEL></a>
+		</TMPL_LOOP>
+		<TMPL_IF NEXTPAGEURL>
+		<a href="<TMPL_VAR NEXTPAGEURL>">→</a>
+		</TMPL_IF>
+		<br />
+	</TMPL_IF>
+<TMPL_ELSE>
+	新着情報はありません。<br />
+</TMPL_IF>
+<hr />
+<a href="<TMPL_VAR URL_FORUMLIST>"><img localsrc="65">フォーラム一覧</a><br />
+<a href="<TMPL_VAR URL_HOME>"><img localsrc="93">ホーム</a>
+</body>
+</html>

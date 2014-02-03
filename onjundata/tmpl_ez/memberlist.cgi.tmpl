@@ -1,0 +1,70 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<TMPL_UNLESS MEMBERS>
+<center>メンバー検索</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+	<form method="post" action="<TMPL_VAR URL>">
+	<dl>
+	<TMPL_IF SESSIONNAME>
+	<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+	</TMPL_IF>
+	<input type="hidden" name="size" value=10 />
+	<dt>職業</dt>
+	<dd><input type="text" name="job" maxsize=60 value="<TMPL_VAR JOB>" istyle=1></dd>
+	<dt>パート（楽器）</dt>
+	<dd><input type="text" name="part" maxsize=60 value="<TMPL_VAR PART>" istyle=1></dd>
+	<dt>期</dt>
+	<dd>
+	<select name="age">
+	<TMPL_LOOP AGE>
+	<option value="<TMPL_VAR AGEVALUE>" <TMPL_VAR AGESELECTED>><TMPL_VAR AGELABEL></TMPL_LOOP>
+	</select>
+	</dd>
+	<input type="submit" name="submit" value="検索"><br />
+	</form>
+</TMPL_UNLESS>
+
+<TMPL_IF MEMBERS>
+<center>メンバー一覧</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+	<TMPL_LOOP MEMBERS>
+	<img localsrc="50"><a href="<TMPL_VAR MEMBERURL>"><TMPL_VAR MEMBERNAME></a><br />
+	<TMPL_IF MEMBERPART>
+		<TMPL_IF MEMBERAGE>
+			┣<TMPL_VAR MEMBERPART><br />
+		<TMPL_ELSE>
+			┗<TMPL_VAR MEMBERPART><br />
+		</TMPL_IF>
+	</TMPL_IF>
+	<TMPL_IF MEMBERAGE>
+		┗<TMPL_VAR MEMBERAGE><br />
+	</TMPL_IF>
+	
+	</TMPL_LOOP>
+
+	<TMPL_IF PREVPAGEURL>
+	<a href="<TMPL_VAR PREVPAGEURL>">←</a>
+	</TMPL_IF>
+	<TMPL_LOOP BACKPAGELOOP>
+	<a href="<TMPL_VAR BACKPAGEURL>"><TMPL_VAR BACKPAGELABEL></a>
+	</TMPL_LOOP>
+	<TMPL_IF NOWPAGENOLABEL>
+	<blink><TMPL_VAR NOWPAGENOLABEL></blink>
+	</TMPL_IF>
+	<TMPL_LOOP FORWARDPAGELOOP>
+	<a href="<TMPL_VAR FORWARDPAGEURL>"><TMPL_VAR FORWARDPAGELABEL></a>
+	</TMPL_LOOP>
+	<TMPL_IF NEXTPAGEURL>
+	<a href="<TMPL_VAR NEXTPAGEURL>">→</a>
+	</TMPL_IF>
+	<br />
+	<a href="<TMPL_VAR URL_MEMBERSEARCH>"><img localsrc="119">検索</a><br />
+</TMPL_IF>
+<hr />
+<a href="<TMPL_VAR URL_HOME>"><img localsrc="93">ホーム</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+	<TMPL_IF URL_SELFONTAMAIMAGE>
+		<div class="block_title">おんたま</div>
+		<div class="block_body">
+			<div align="center">
+				<a class="ontamalink" href="<TMPL_VAR URL_ONTAMA>">
+				<TMPL_IF SELFONTAMADEAD>
+				<img src="./res/corpse1.gif" alt="<TMPL_VAR SELFONTAMANAME>"><br />
+				<TMPL_ELSE>
+				<img src="<TMPL_VAR URL_SELFONTAMAIMAGE>" alt="<TMPL_VAR SELFONTAMANAME>"><br />
+				</TMPL_IF>
+				<TMPL_VAR SELFONTAMANAME>
+			</a>
+			</div>
+		</div>
+	<TMPL_ELSE>
+		<div class="block_title">おんたま</div>
+		<div class="block_body">
+		あなたの「おんたま」はいません。<br />
+		<a href="<TMPL_VAR URL_SETONTAMA>">「おんたま」の開始</a><br />
+		<TMPL_IF URL_ONTAMAMANUAL>
+			<a href="<TMPL_VAR URL_ONTAMAMANUAL>">「おんたま」とは？</a><br />
+		</TMPL_IF>
+		<a href="<TMPL_VAR URL_ONTAMALIST>">みんなの「おんたま」を見る</a><br />
+		</div>
+	</TMPL_IF>

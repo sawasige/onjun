@@ -1,0 +1,82 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+	<TMPL_IF URL_ONTAMAIMAGE>
+		<center>おんたま「<TMPL_VAR ONTAMANAME>」</center>
+		<TMPL_IF MSG>
+		<font color="red"><TMPL_VAR MSG></font><br />
+		</TMPL_IF>
+		<TMPL_VAR OWNERNAME>さんの<TMPL_VAR ONTAMANAME>です。<br />
+		<center><img src="<TMPL_VAR URL_ONTAMAIMAGE>"></center>
+		<TMPL_IF URL_ONTAMAFOOD>
+			<a href="<TMPL_VAR URL_ONTAMAFOOD>">ゴハンをあげる</a><br />
+		</TMPL_IF>
+		<TMPL_IF URL_ONTAMAGAME>
+			<a href="<TMPL_VAR URL_ONTAMAGAME>">あそぶ</a><br />
+		</TMPL_IF>
+		<TMPL_IF URL_DELETEONTAMA>
+			<a href="<TMPL_VAR URL_DELETEONTAMA>">おんたまを消す</a><br />
+		</TMPL_IF>
+		<TMPL_IF URL_ONTAMAMANUAL>
+			<a href="<TMPL_VAR URL_ONTAMAMANUAL>">おんたまマニュアル</a><br />
+		</TMPL_IF>
+		<a href="<TMPL_VAR URL_ONTAMALIST>">みんなのおんたまを見る</a><br />
+
+		<br />
+		<center><TMPL_VAR ONTAMANAME>の状態</center>
+		<TMPL_IF ONTAMASTATUS>
+			<TMPL_LOOP ONTAMASTATUS>
+				<TMPL_VAR VALUE><br />
+			</TMPL_LOOP>
+		</TMPL_IF>
+		<TMPL_IF ONTAMALOGS>
+			<br />
+			<center><TMPL_VAR ONTAMANAME>日記</center>
+			<TMPL_LOOP ONTAMALOGS>
+				<TMPL_VAR DATE>…<TMPL_VAR VALUE><br />
+			</TMPL_LOOP>
+		</TMPL_IF>
+	<TMPL_ELSE>
+		<center>おんたま</center>
+		あなたの「おんたま」はまだいません。<br />
+		<br />
+		<a href="<TMPL_VAR URL_ONTAMAMANUAL>">「おんたま」とは？</a><br />
+		<br />
+		<a href="<TMPL_VAR URL_SETONTAMA>">「おんたま」の開始</a><br />
+		<a href="<TMPL_VAR URL_ONTAMALIST>">みんなの「おんたま」を見る</a><br />
+	</TMPL_IF>
+
+	<TMPL_IF ONTAMADEAD>
+		<center>おんたま「<TMPL_VAR ONTAMANAME>」</center>
+		<TMPL_VAR OWNERNAME>さんの<TMPL_VAR ONTAMANAME>です。<br />
+		<center><img src="./res/corpse1.gif"></center>
+		<TMPL_IF URL_DELETEONTAMA>
+			<br />
+			<a href="<TMPL_VAR URL_DELETEONTAMA>">おんたまを消す</a><br />
+		</TMPL_IF>
+		<br />
+		<TMPL_IF URL_ONTAMAMANUAL>
+			<a href="<TMPL_VAR URL_ONTAMAMANUAL>">おんたまマニュアル</a><br />
+		</TMPL_IF>
+		<a href="<TMPL_VAR URL_ONTAMALIST>">みんなのおんたまを見る</a><br />
+
+		<br />
+		<center><TMPL_VAR ONTAMANAME>の状態</center>
+		<TMPL_IF ONTAMASTATUS>
+			<TMPL_LOOP ONTAMASTATUS>
+				<TMPL_VAR VALUE><br />
+			</TMPL_LOOP>
+		</TMPL_IF>
+		<TMPL_IF ONTAMALOGS>
+			<br />
+			<center><TMPL_VAR ONTAMANAME>日記</center>
+			<TMPL_LOOP ONTAMALOGS>
+				<TMPL_VAR DATE>…<TMPL_VAR VALUE><br />
+			</TMPL_LOOP>
+		</TMPL_IF>
+	</TMPL_IF>
+
+
+<hr />
+<a href="<TMPL_VAR URL_HOME>"><img localsrc="93">ホーム</a>
+</body>
+</html>

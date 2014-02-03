@@ -1,0 +1,26 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>入力確認</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+
+<form method="post" action="<TMPL_VAR URL>">
+<TMPL_IF SESSIONNAME>
+<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+</TMPL_IF>
+<font color="#639ACE">▼</font>メッセージのお知らせメール<br />
+<TMPL_IF MAILMESSAGEFLAG>
+受け取る<br />
+<TMPL_ELSE>
+受け取らない<br />
+</TMPL_IF>
+<input type="submit" name="submit" value="送信">
+<input type="submit" name="cancel" value="再入力">
+</form>
+
+<hr />
+<a href="<TMPL_VAR URL_HOME>"><img localsrc="93">ホーム</a>
+
+</body>
+</html>

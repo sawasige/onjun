@@ -1,0 +1,67 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title">トピックコメント削除確認</div>
+	<div class="block_body">
+		<a href="<TMPL_VAR NAME=URL_FORUMLIST>">フォーラム一覧</a> / <a href="<TMPL_VAR FORUMURL>"><TMPL_VAR FORUMNAME></a> / <a href="<TMPL_VAR TOPICURL>"><TMPL_VAR TOPICTITLE></a> / <b>トピックコメント削除確認</b><br />
+
+		<form method="post" action="<TMPL_VAR URL>">
+		<input type="hidden" name="topiccommentid" value="<TMPL_VAR TOPICCOMMENTID>" />
+		<TMPL_IF SESSIONNAME>
+		<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+		</TMPL_IF>
+		このコメントを削除します。よろしいですか？<br />
+		<font color="#639ACE">▼</font>コメント<br />
+		<TMPL_VAR TOPICCOMMENTBODY><br />
+
+		<font color="#639ACE">▼</font>写真1<br />
+		<TMPL_IF FILE1LARGEURL>
+			<TMPL_IF FILE1SMALLURL>
+				<a href="<TMPL_VAR FILE1LARGEURL>"><img src="<TMPL_VAR FILE1SMALLURL>">拡大</a><br />
+			<TMPL_ELSE>
+				<img src="<TMPL_VAR FILE1LARGEURL>"><br />
+			</TMPL_IF>
+		<TMPL_ELSE>
+		なし<br />
+		</TMPL_IF>
+
+		<font color="#639ACE">▼</font>写真2<br />
+		<TMPL_IF FILE2LARGEURL>
+			<TMPL_IF FILE2SMALLURL>
+				<a href="<TMPL_VAR FILE2LARGEURL>"><img src="<TMPL_VAR FILE2SMALLURL>">拡大</a><br />
+			<TMPL_ELSE>
+				<img src="<TMPL_VAR FILE2LARGEURL>"><br />
+			</TMPL_IF>
+		<TMPL_ELSE>
+		なし<br />
+		</TMPL_IF>
+
+		<font color="#639ACE">▼</font>写真3<br />
+		<TMPL_IF FILE3LARGEURL>
+			<TMPL_IF FILE3SMALLURL>
+				<a href="<TMPL_VAR FILE3LARGEURL>"><img src="<TMPL_VAR FILE3SMALLURL>">拡大</a><br />
+			<TMPL_ELSE>
+				<img src="<TMPL_VAR FILE3LARGEURL>"><br />
+			</TMPL_IF>
+		<TMPL_ELSE>
+		なし<br />
+		</TMPL_IF>
+
+		<input type="submit" name="submit" value="削除">
+		<input type="submit" name="cancel" value="キャンセル">
+		</form>
+
+	</div>
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

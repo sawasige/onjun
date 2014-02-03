@@ -1,0 +1,179 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title">トピック</div>
+	<div class="block_body">
+		<a href="<TMPL_VAR NAME=URL_FORUMLIST>">フォーラム一覧</a> / <a href="<TMPL_VAR FORUMURL>"><TMPL_VAR FORUMNAME></a> / <b><TMPL_VAR TOPICTITLE></b><br />
+		
+		<a href="<TMPL_VAR URL_POSTTOPIC>">新規トピック作成</a><br />
+		<table class="topic" cellspacing="1" width="100%">
+		<!-- 投稿タイトル -->
+		<tr><th width="100"></th><th width="100%"><TMPL_VAR TOPICTITLE></th></tr>
+		<tr><td width="100">
+			<!-- 投稿者 -->
+			<span class="topicno">0</span>.
+			<a href="<TMPL_VAR TOPICREGISTUSERURL>"><TMPL_VAR TOPICREGISTUSERNAME></a>
+		</td>
+		<td width="100%">
+		<!-- 投稿時間 -->
+		<div class="topictime"><TMPL_VAR TOPICREGISTTIME></div>
+		<TMPL_IF FILE1LARGEURL>
+			<!-- 写真1 -->
+			<TMPL_IF FILE1SMALLURL>
+				<a href="<TMPL_VAR FILE1LARGEURL>"><img src="<TMPL_VAR FILE1SMALLURL>"></a>
+			<TMPL_ELSE>
+				<img src="<TMPL_VAR FILE1LARGEURL>">
+			</TMPL_IF>
+		</TMPL_IF>
+		<TMPL_IF FILE2LARGEURL>
+			<!-- 写真2 -->
+			<TMPL_IF FILE2SMALLURL>
+				<a href="<TMPL_VAR FILE2LARGEURL>"><img src="<TMPL_VAR FILE2SMALLURL>"></a>
+			<TMPL_ELSE>
+				<img src="<TMPL_VAR FILE2LARGEURL>">
+			</TMPL_IF>
+		</TMPL_IF>
+		<TMPL_IF FILE3LARGEURL>
+			<!-- 写真3 -->
+			<TMPL_IF FILE3SMALLURL>
+				<a href="<TMPL_VAR FILE3LARGEURL>"><img src="<TMPL_VAR FILE3SMALLURL>"></a>
+			<TMPL_ELSE>
+				<img src="<TMPL_VAR FILE3LARGEURL>">
+			</TMPL_IF>
+		</TMPL_IF>
+		<!-- 本文 -->
+		<div class="topicbody">
+		<TMPL_VAR TOPICBODY>
+		</div>
+		<div clsas="topicedit">
+		<TMPL_IF MODIFYTOPICURL><a href="<TMPL_VAR MODIFYTOPICURL>">[修正]</a></TMPL_IF>
+		<TMPL_IF DELETETOPICURL><a href="<TMPL_VAR DELETETOPICURL>">[削除]</a></TMPL_IF>
+		</div>
+		</td></tr>
+		</table>
+
+<TMPL_IF COMMENTS>
+		<br />
+<TMPL_IF NOWPAGENOLABEL>
+		<div class="pagelink">
+			<!-- ページ -->
+			<TMPL_IF PREVPAGEURL>
+			<a href="<TMPL_VAR PREVPAGEURL>">←</a>
+			</TMPL_IF>
+			<TMPL_LOOP BACKPAGELOOP>
+			<a href="<TMPL_VAR BACKPAGEURL>"><TMPL_VAR BACKPAGELABEL></a>
+			</TMPL_LOOP>
+			<TMPL_IF NOWPAGENOLABEL>
+			<blink><b><TMPL_VAR NOWPAGENOLABEL></b></blink>
+			</TMPL_IF>
+			<TMPL_LOOP FORWARDPAGELOOP>
+			<a href="<TMPL_VAR FORWARDPAGEURL>"><TMPL_VAR FORWARDPAGELABEL></a>
+			</TMPL_LOOP>
+			<TMPL_IF NEXTPAGEURL>
+			<a href="<TMPL_VAR NEXTPAGEURL>">→</a>
+			</TMPL_IF>
+		</div>
+</TMPL_IF>
+		<table class="topiccomments" cellspacing="1" width="100%">
+		<TMPL_LOOP COMMENTS>
+		<tr><td width="100">
+			<a name="<TMPL_VAR ID>"></a>
+			<!-- 連番 -->
+			<span class="commentno"><TMPL_VAR COMMENTNO></span>.
+			<!-- 投稿者 -->
+			<a href="<TMPL_VAR REGISTUSERURL>"><TMPL_VAR REGISTUSERNAME></a>
+		</td><td width="100%">
+			<!-- 投稿時間 -->
+			<div class="commenttime"><TMPL_VAR REGISTTIME></div>
+
+			<TMPL_IF FILE1LARGEURL>
+				<!-- 写真1 -->
+				<TMPL_IF FILE1SMALLURL>
+					<a href="<TMPL_VAR FILE1LARGEURL>"><img src="<TMPL_VAR FILE1SMALLURL>"></a>
+				<TMPL_ELSE>
+					<img src="<TMPL_VAR FILE1LARGEURL>">
+				</TMPL_IF>
+			</TMPL_IF>
+			<TMPL_IF FILE2LARGEURL>
+				<!-- 写真2 -->
+				<TMPL_IF FILE2SMALLURL>
+					<a href="<TMPL_VAR FILE2LARGEURL>"><img src="<TMPL_VAR FILE2SMALLURL>"></a>
+				<TMPL_ELSE>
+					<img src="<TMPL_VAR FILE2LARGEURL>">
+				</TMPL_IF>
+			</TMPL_IF>
+			<TMPL_IF FILE3LARGEURL>
+				<!-- 写真3 -->
+				<TMPL_IF FILE3SMALLURL>
+					<a href="<TMPL_VAR FILE3LARGEURL>"><img src="<TMPL_VAR FILE3SMALLURL>"></a>
+				<TMPL_ELSE>
+					<img src="<TMPL_VAR FILE3LARGEURL>">
+				</TMPL_IF>
+			</TMPL_IF>
+			<!-- 本文 -->
+			<div class="topiccommentbody">
+			<TMPL_VAR BODY>
+			</div>
+			<div clsas="topiccommentedit">
+			<TMPL_IF MODIFYTOPICCOMMENTURL><a href="<TMPL_VAR MODIFYTOPICCOMMENTURL>">[修正]</a></TMPL_IF>
+			<TMPL_IF DELETETOPICCOMMENTURL><a href="<TMPL_VAR DELETETOPICCOMMENTURL>">[削除]</a></TMPL_IF>
+			</div>
+		</td></tr>
+		</TMPL_LOOP>
+		</table>
+
+<TMPL_IF NOWPAGENOLABEL>
+		<div class="pagelink">
+			<!-- ページ -->
+			<TMPL_IF PREVPAGEURL>
+			<a href="<TMPL_VAR PREVPAGEURL>">←</a>
+			</TMPL_IF>
+			<TMPL_LOOP BACKPAGELOOP>
+			<a href="<TMPL_VAR BACKPAGEURL>"><TMPL_VAR BACKPAGELABEL></a>
+			</TMPL_LOOP>
+			<TMPL_IF NOWPAGENOLABEL>
+			<blink><b><TMPL_VAR NOWPAGENOLABEL></b></blink>
+			</TMPL_IF>
+			<TMPL_LOOP FORWARDPAGELOOP>
+			<a href="<TMPL_VAR FORWARDPAGEURL>"><TMPL_VAR FORWARDPAGELABEL></a>
+			</TMPL_LOOP>
+			<TMPL_IF NEXTPAGEURL>
+			<a href="<TMPL_VAR NEXTPAGEURL>">→</a>
+			</TMPL_IF>
+		</div>
+</TMPL_IF>
+	
+<TMPL_ELSE>
+		コメントはありません。<br />
+</TMPL_IF>
+		<form method="post" action="posttopiccomment.cgi" enctype="multipart/form-data">
+		<input type="hidden" name="topicid" value="<TMPL_VAR TOPICID>" />
+		<TMPL_IF SESSIONNAME>
+			<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+		</TMPL_IF>
+		<font color="#639ACE">▼</font>コメントを書く<br />
+		<textarea rows="5" cols="40" name="body"><TMPL_VAR BODY></textarea><br />
+		<TMPL_UNLESS MOBILE>
+			<font color="#639ACE">▼</font>写真1<br />
+			<input type="file" size="40" name="file1"><br />
+			<font color="#639ACE">▼</font>写真2<br />
+			<input type="file" size="40" name="file2"><br />
+			<font color="#639ACE">▼</font>写真3<br />
+			<input type="file" size="40" name="file3"><br />
+		</TMPL_UNLESS>
+		<input type="submit" name="submit" value="確認"><br />
+		</form>
+
+	</div>
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

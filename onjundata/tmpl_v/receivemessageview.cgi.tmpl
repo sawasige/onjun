@@ -1,0 +1,24 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>ŽóMƒƒbƒZ[ƒW</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<font color="#639ACE">¥</font>‘—MŽÒ<br />
+<a href="<TMPL_VAR SENDERURL>"><TMPL_VAR SENDER></a><br />
+<font color="#639ACE">¥</font>ŽóM“úŽž<br />
+<TMPL_VAR SENDTIME><br />
+<font color="#639ACE">¥</font>ƒTƒuƒWƒFƒNƒg<br />
+<TMPL_VAR SUBJECT><br />
+<font color="#639ACE">¥</font>–{•¶<br />
+<TMPL_VAR BODY><br />
+<hr />
+<a href="<TMPL_VAR URL_REPLYMESSAGE>">$Pg•ÔM‚·‚é</a><br />
+<a href="<TMPL_VAR URL_RECEIVEMESSAGEDELETE>">$P&‚±‚ÌƒƒbƒZ[ƒW‚ðíœ</a><br />
+<a href="<TMPL_VAR URL_RECEIVEMESSAGELIST>">$E#ŽóMƒƒbƒZ[ƒWˆê——</a><br />
+<a href="<TMPL_VAR URL_SENDMESSAGELIST>">$E#‘—MÏ‚ÝƒƒbƒZ[ƒWˆê——</a>
+<hr />
+<a href="<TMPL_VAR URL_HOME>">$GVƒz[ƒ€</a>
+
+</body>
+</html>

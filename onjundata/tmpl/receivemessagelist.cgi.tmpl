@@ -1,0 +1,60 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title">受信メッセージ一覧</div>
+	<div class="block_body">
+		<div><a href="<TMPL_VAR NAME=URL_SENDMESSAGELIST>">送信済みメッセージ一覧</a></div>
+		<TMPL_IF MESSAGES>
+			<table cellspacing="1" width="100%">
+			<tr><th>サブジェクト</th><th>送信者</th><th>時間</th></tr>
+			<TMPL_LOOP MESSAGES>
+				<tr>
+				<TMPL_UNLESS OPENED>
+				<td><b><a href="<TMPL_VAR URL>"><TMPL_VAR SUBJECT></a></b>（未読）</td>
+				<TMPL_ELSE>
+				<td><a href="<TMPL_VAR URL>"><TMPL_VAR SUBJECT></a></td>
+				</TMPL_UNLESS>
+				
+				<td><a href="<TMPL_VAR SENDERURL>"><TMPL_VAR SENDER></a></td>
+				<td><TMPL_VAR TIME></td>
+				</tr>
+			</TMPL_LOOP>
+			</table>
+
+			<TMPL_IF NOWPAGENOLABEL>
+				<div class="pagelink">
+					<!-- ページ -->
+					<TMPL_IF PREVPAGEURL>
+					<a href="<TMPL_VAR PREVPAGEURL>">←</a>
+					</TMPL_IF>
+					<TMPL_LOOP BACKPAGELOOP>
+					<a href="<TMPL_VAR BACKPAGEURL>"><TMPL_VAR BACKPAGELABEL></a>
+					</TMPL_LOOP>
+					<TMPL_IF NOWPAGENOLABEL>
+					<blink><b><TMPL_VAR NOWPAGENOLABEL></b></blink>
+					</TMPL_IF>
+					<TMPL_LOOP FORWARDPAGELOOP>
+					<a href="<TMPL_VAR FORWARDPAGEURL>"><TMPL_VAR FORWARDPAGELABEL></a>
+					</TMPL_LOOP>
+					<TMPL_IF NEXTPAGEURL>
+					<a href="<TMPL_VAR NEXTPAGEURL>">→</a>
+					</TMPL_IF>
+				</div>
+			</TMPL_IF>
+		<TMPL_ELSE>
+		<div>受信メッセージはありません。</div>
+		</TMPL_IF>
+	</div>
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

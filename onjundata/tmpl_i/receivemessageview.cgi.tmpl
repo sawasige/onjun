@@ -1,0 +1,24 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>受信メッセージ</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<font color="#639ACE">▼</font>送信者<br />
+<a href="<TMPL_VAR SENDERURL>"><TMPL_VAR SENDER></a><br />
+<font color="#639ACE">▼</font>受信日時<br />
+<TMPL_VAR SENDTIME><br />
+<font color="#639ACE">▼</font>サブジェクト<br />
+<TMPL_VAR SUBJECT><br />
+<font color="#639ACE">▼</font>本文<br />
+<TMPL_VAR BODY><br />
+<hr />
+<a href="<TMPL_VAR URL_REPLYMESSAGE>">&#xE735;返信する</a><br />
+<a href="<TMPL_VAR URL_RECEIVEMESSAGEDELETE>">&#xE705;このメッセージを削除</a><br />
+<a href="<TMPL_VAR URL_RECEIVEMESSAGELIST>">&#xE6D3;受信メッセージ一覧</a><br />
+<a href="<TMPL_VAR URL_SENDMESSAGELIST>">&#xE6D3;送信済みメッセージ一覧</a>
+<hr />
+<a href="<TMPL_VAR URL_HOME>">&#xE663;ホーム</a>
+
+</body>
+</html>

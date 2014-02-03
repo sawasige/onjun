@@ -1,0 +1,200 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-size: 10pt;
+}
+
+body {
+	width: 100%;
+	color: #444488;
+	background-color: white;
+}
+
+img {
+	border: 0px;
+}
+
+table {
+	background-color: #ddddff;
+}
+th {
+	background-color: #eeeeff;
+	font-weight: bold;
+	text-align: left;
+	white-space: nowrap;
+	padding: 3px;
+}
+
+td {
+	background-color: #ffffff;
+	padding: 3px;
+	vertical-align: top;
+}
+
+a:hover {
+	color: #ff00ff;
+}
+
+
+
+#headbar {
+	width: 900px;
+	height: 23px;
+}
+#headbar td {
+	background-image: url(bar.gif);
+}
+
+#body {
+	margin: 0px auto;
+	margin-top: 1em;
+	width: 900px;
+	border-left: solid 1px #ddddff;
+	border-top: solid 1px #ddddff;
+	border-right: solid 1px #ddddff;
+}
+
+#navigator {
+	float: left;
+	width: 179px;
+	border-right: solid 1px #ddddff;
+}
+
+#contents {
+	float:left;
+	width: 520px;
+	border-right: solid 1px #ddddff;
+}
+
+#right {
+	float:left;
+	width: 199px;
+}
+
+#title {
+	width: 900px;
+	height: 90px;
+	background-color: #ccccff;
+}
+
+#foot {
+	width: 900px;
+	height: 23px;
+	clear: both;
+}
+
+#foot td {
+	background-image: url(bar.gif);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.block_title {
+	padding: 3px;
+	font-weight: bold;
+}
+
+.block_body {
+	margin: 1em;
+}
+
+.date {
+	white-space: nowrap;
+}
+
+#navigator .block_title {
+	background-color: #ddddff;
+	color: #8888ff;
+}
+
+#navigator .block_body {
+}
+
+#navigator 
+
+#contents .block_body {
+}
+
+
+a.menu {
+	text-decoration: none;
+	margin-top: 1px;
+	display: block;
+	background-color: #eeeeff;
+	padding-top: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	border-top: solid 1px #eeeeff;
+	border-left: solid 1px #eeeeff;
+	border-right: solid 1px #ddddee;
+	border-bottom: solid 1px #ddddee;
+}
+
+a.menu:hover {
+	padding-top: 1px;
+	padding-left: 1px;
+	padding-right: 3px;
+	padding-bottom: 3px;
+	background-color: #ffffaa;
+	border-top: solid 1px #f8f8f8;
+	border-left: solid 1px #f8f8f8;
+	border-right: solid 1px #aaaaaa;
+	border-bottom: solid 1px #aaaaaa;
+}
+
+.topics {
+	table-layout: fixed;
+	width: 100%;
+}
+
+.topicnews {
+	table-layout: fixed;
+	width: 100%;
+}
+
+.topic {
+	table-layout: fixed;
+	width: 100%;
+}
+
+.topicno {
+	font-weight: bold;
+	color: #639ace;
+}
+
+.topictime {
+	color: #639ace;
+	font-size: 9pt;
+}
+
+.topiccomments {
+	table-layout: fixed;
+	width: 100%;
+}
+
+.commentno {
+	font-weight: bold;
+	color: #639ace;
+}
+
+.commenttime {
+	color: #639ace;
+	font-size: 9pt;
+}
+
+.pagelink {
+	text-align: right;
+}
+
+a.ontamalink {
+	text-decoration: none;
+}
+
+.loginuser {
+	width: 150px;
+}
+
+.loginpass {
+	width: 150px;
+}

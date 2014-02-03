@@ -1,0 +1,53 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+
+<img localsrc="65"><TMPL_VAR FORUMNAME><br />
+<font size="-1"><TMPL_VAR FORUMNOTE></font><br />
+<hr />
+<a href="<TMPL_VAR URL_POSTTOPIC>"><img localsrc="508">新規トピック作成</a><br />
+
+<TMPL_IF TOPICS>
+	<TMPL_LOOP TOPICS>
+		<hr size=1 />
+		<a name="<TMPL_VAR ID>"></a>
+		<a href="<TMPL_VAR URL>"><TMPL_VAR TITLE></a>(<TMPL_VAR COMMENTCOUNT>)<br />
+		<font size="-1">
+		投稿時間:<TMPL_VAR REGISTTIME><br />
+		投稿者:<a href="<TMPL_VAR REGISTUSERURL>"><TMPL_VAR REGISTUSERNAME></a><br />
+		最終時間:<TMPL_VAR LASTTIME><br />
+		最終投稿者:<a href="<TMPL_VAR LASTUSERURL>"><TMPL_VAR LASTUSERNAME></a><br />
+		</font>
+	</TMPL_LOOP>
+
+	<TMPL_IF NOWPAGENOLABEL>
+		<hr size=1 />
+		<!-- ページ -->
+		<TMPL_IF PREVPAGEURL>
+		<a href="<TMPL_VAR PREVPAGEURL>">←</a>
+		</TMPL_IF>
+		<TMPL_LOOP BACKPAGELOOP>
+		<a href="<TMPL_VAR BACKPAGEURL>"><TMPL_VAR BACKPAGELABEL></a>
+		</TMPL_LOOP>
+		<TMPL_IF NOWPAGENOLABEL>
+		<blink><TMPL_VAR NOWPAGENOLABEL></blink>
+		</TMPL_IF>
+		<TMPL_LOOP FORWARDPAGELOOP>
+		<a href="<TMPL_VAR FORWARDPAGEURL>"><TMPL_VAR FORWARDPAGELABEL></a>
+		</TMPL_LOOP>
+		<TMPL_IF NEXTPAGEURL>
+		<a href="<TMPL_VAR NEXTPAGEURL>">→</a>
+		</TMPL_IF>
+		<br />
+	</TMPL_IF>
+<TMPL_ELSE>
+<hr size=1 />
+トピックはありません。
+</TMPL_IF>
+<hr />
+<a href="<TMPL_VAR URL_FORUMLIST>"><img localsrc="65">フォーラム一覧</a><br />
+<a href="<TMPL_VAR URL_HOME>"><img localsrc="93">ホーム</a>
+</body>
+</html>

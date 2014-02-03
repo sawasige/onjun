@@ -1,0 +1,47 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title">新規トピック作成確認</div>
+	<div class="block_body">
+		<a href="<TMPL_VAR NAME=URL_FORUMLIST>">フォーラム一覧</a> / <a href="<TMPL_VAR FORUMURL>"><TMPL_VAR FORUMNAME></a> / <b>新規トピック作成確認</b><br />
+		<form method="post" action="<TMPL_VAR URL>">
+		<TMPL_IF SESSIONNAME>
+		<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+		</TMPL_IF>
+		<font color="#639ACE">▼</font>フォーラム名<br />
+		<TMPL_VAR FORUMNAME><br />
+		<font color="#639ACE">▼</font>タイトル<br />
+		<TMPL_VAR TOPICTITLE><br />
+		<font color="#639ACE">▼</font>本文<br />
+		<TMPL_VAR BODY><br />
+
+		<TMPL_IF FILE1>
+			<font color="#639ACE">▼</font>写真1<br />
+			<TMPL_VAR FILE1><br />
+		</TMPL_IF>
+		<TMPL_IF FILE2>
+			<font color="#639ACE">▼</font>写真2<br />
+			<TMPL_VAR FILE2><br />
+		</TMPL_IF>
+		<TMPL_IF FILE3>
+			<font color="#639ACE">▼</font>写真3<br />
+			<TMPL_VAR FILE3><br />
+		</TMPL_IF>
+		<input type="submit" name="submit" value="送信">
+		<input type="submit" name="cancel" value="再入力">
+		</form>
+
+	</div>
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

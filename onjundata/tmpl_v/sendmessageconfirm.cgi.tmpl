@@ -1,0 +1,30 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>У№Ч═КmФF</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<TMPL_IF RECEIVER_USERID>
+	<form method="post" action="<TMPL_VAR URL>">
+	<TMPL_IF SESSIONNAME>
+	<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+	</TMPL_IF>
+<TMPL_IF REPLYID>
+	<input type="hidden" name="replyid" value="<TMPL_VAR REPLYID>" />
+</TMPL_IF>
+	<input type="hidden" name="receiver_userid" value="<TMPL_VAR RECEIVER_USERID>" />
+	<font color="#639ACE">Бе</font>И╢Рц<br />
+	<TMPL_VAR RECEIVER_NAME><br />
+	<font color="#639ACE">Бе</font>ГTГuГWГFГNГg<br />
+	<TMPL_VAR SUBJECT><br />
+	<font color="#639ACE">Бе</font>Ц{Х╢<br />
+	<TMPL_VAR BODY><br />
+	<input type="submit" name="submit" value="СЧРM">
+	<input type="submit" name="cancel" value="Н─У№Ч═">
+	</form>
+</TMPL_IF>
+<hr />
+<a href="<TMPL_VAR URL_HOME>">$GVГzБ[ГА</a>
+
+</body>
+</html>

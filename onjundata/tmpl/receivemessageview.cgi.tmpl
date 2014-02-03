@@ -1,0 +1,33 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title">受信メッセージ</div>
+	<div class="block_body">
+		<font color="#639ACE">▼</font>送信者<br />
+		<a href="<TMPL_VAR SENDERURL>"><TMPL_VAR SENDER></a><br />
+		<font color="#639ACE">▼</font>受信日時<br />
+		<TMPL_VAR SENDTIME><br />
+		<font color="#639ACE">▼</font>サブジェクト<br />
+		<TMPL_VAR SUBJECT><br />
+		<font color="#639ACE">▼</font>本文<br />
+		<TMPL_VAR BODY>
+		<div>
+		<a href="<TMPL_VAR NAME=URL_REPLYMESSAGE>">返信する</a><br />
+		<a href="<TMPL_VAR NAME=URL_RECEIVEMESSAGEDELETE>">このメッセージを削除</a><br />
+		<a href="<TMPL_VAR NAME=URL_RECEIVEMESSAGELIST>">受信メッセージ一覧</a><br />
+		<a href="<TMPL_VAR NAME=URL_SENDMESSAGELIST>">送信済みメッセージ一覧</a>
+		</div>
+	</div>
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

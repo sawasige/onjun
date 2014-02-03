@@ -1,0 +1,62 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_ontama.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<TMPL_IF URL_ONTAMAIMAGE>
+		<div class="block_title">おんたまゲーム</div>
+		<div class="block_body">
+			<TMPL_LOOP GAMEMASSAGE>
+				<TMPL_VAR VALUE><br />
+			</TMPL_LOOP>
+			<img src="<TMPL_VAR URL_ONTAMAIMAGE>"><br />
+			<TMPL_IF JANKEN>
+				<form method="post" action="<TMPL_VAR URL>">
+					<TMPL_IF SESSIONNAME>
+						<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+					</TMPL_IF>
+					<TMPL_IF USERID>
+						<input type="hidden" name="userid" value="<TMPL_VAR USERID>" />
+					</TMPL_IF>
+					<input type="hidden" name="gametype" value="0" />
+					<input type="submit" name="gu" value="グー">
+					<input type="submit" name="choki" value="チョキ">
+					<input type="submit" name="pa" value="パー"><br />
+				</form>
+				<br />
+			</TMPL_IF>
+			<TMPL_IF URL_ONTAMAGAMERETRY>
+				<div><a href="<TMPL_VAR URL_ONTAMAGAMERETRY>">もう一度</a></div>
+			</TMPL_IF>
+			<div><a href="<TMPL_VAR URL_ONTAMA>">やめる</a></div>
+		</div>
+
+		<div class="block_title"><TMPL_VAR ONTAMANAME>の状態</div>
+		<div class="block_body">
+			<TMPL_IF ONTAMASTATUS>
+				<TMPL_LOOP ONTAMASTATUS>
+					<TMPL_VAR VALUE><br />
+				</TMPL_LOOP>
+			</TMPL_IF>
+		</div>
+		<TMPL_IF ONTAMATALKS>
+			<div class="block_title">おんたまのひとこと</div>
+			<div class="block_body">
+				<TMPL_LOOP ONTAMATALKS>
+					<TMPL_VAR DAY>…<TMPL_VAR VALUE><br />
+				</TMPL_LOOP>
+			</div>
+		</TMPL_IF>
+	</TMPL_IF>
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

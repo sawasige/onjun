@@ -1,0 +1,69 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>ƒvƒƒtƒB[ƒ‹•ÏX</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<form method="post" action="<TMPL_VAR URL>">
+<TMPL_IF SESSIONNAME>
+<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+</TMPL_IF>
+<TMPL_IF USERID>
+<input type="hidden" name="userid" value="<TMPL_VAR USERID>" />
+</TMPL_IF>
+<font color="#639ACE">¥</font>ˆÈ‰º‚Í•K{€–Ú‚Å‚·B
+<dl>
+<dt>ƒ†[ƒU[–¼<font color="#ff00ff">¦</font></dt>
+<dd><input type="text" name="user" maxsize=25 value="<TMPL_VAR USER>" istyle=1></dd>
+<dt>ƒpƒXƒ[ƒh<font color="#ff00ff">¦</font></dt>
+<dd><input type="text" name="pass" maxsize=12 value="<TMPL_VAR PASS>" istyle=4></dd>
+<dt>ƒ[ƒ‹ƒAƒhƒŒƒX<font color="#ff00ff">¦</font></dt>
+<dd><input type="text" name="mail" maxsize=60 value="<TMPL_VAR MAIL>" istyle=3></dd>
+</dl>
+<font color="#639ACE">¥</font>ˆÈ‰º‚Í”CˆÓ€–Ú‚Å‚·B
+<dl>
+<dt>–{–¼</dt>
+<dd><input type="text" name="realname" maxsize=60 value="<TMPL_VAR REALNAME>" istyle=1></dd>
+<dt>’a¶“ú<br />1974”N9ŒŽ3“ú¨19740903</dt>
+<dd><input type="text" name="birthday" size=8 maxsize=8 value="<TMPL_VAR BIRTHDAY>" istyle=4></dd>
+<dt>«•Ê</dt>
+<dd>
+<select name="sex">
+<TMPL_LOOP SEX>
+<option value="<TMPL_VAR SEXVALUE>" <TMPL_VAR SEXSELECTED>><TMPL_VAR SEXLABEL>
+</TMPL_LOOP>
+</select>
+</dd>
+<dt>ŒŒ‰tŒ^</dt>
+<dd>
+<select name="blood">
+<TMPL_LOOP BLOOD>
+<option value="<TMPL_VAR BLOODVALUE>" <TMPL_VAR BLOODSELECTED>><TMPL_VAR BLOODLABEL>
+</TMPL_LOOP>
+</select>
+</dd>
+<dt>E‹Æ</dt>
+<dd><input type="text" name="job" maxsize=60 value="<TMPL_VAR JOB>" istyle=1></dd>
+<dt>ŠyŠí</dt>
+<dd><input type="text" name="part" maxsize=60 value="<TMPL_VAR PART>" istyle=1></dd>
+<dt>ZŠ</dt>
+<dd><input type="text" name="place" maxsize=60 value="<TMPL_VAR PLACE>" istyle=1></dd>
+<dt>Šú</dt>
+<dd>
+<select name="age">
+<TMPL_LOOP AGE>
+<option value="<TMPL_VAR AGEVALUE>" <TMPL_VAR AGESELECTED>><TMPL_VAR AGELABEL></TMPL_LOOP>
+</select>
+</dd>
+<dt>Ž©ŒÈÐ‰î</dt>
+<dd>
+<textarea rows="4" name="note"><TMPL_VAR NOTE></textarea>
+</dd>
+</dl>
+<input type="submit" name="submit" value="Šm”F"><br />
+</form>
+<hr />
+<a href="<TMPL_VAR URL_HOME>">$GVƒz[ƒ€</a>
+
+</body>
+</html>

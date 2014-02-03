@@ -1,0 +1,27 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>おんたまとは？</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+
+	<div>
+	「おんたま」とは、<TMPL_VAR TITLE> の中で飼う、あなただけのペットです。<br />
+	<img src="./res/egg1.gif"><br />
+	「おんたま」を始めると、あなたにたまごがわたされます。<br />
+	このたまごは、飼い主の行動によって成長が変わります。<br />
+	<br />
+	「おんたま」はたまにひとことだけ日記をつけることがあります。<br />
+	成長が進むと日記をつける回数があがり、日記の内容も変わります。<br />
+	<br />
+	<TMPL_IF URL_SELFONTAMAIMAGE>
+		<a href="<TMPL_VAR URL_ONTAMA>">もどる<br />
+	<TMPL_ELSE>
+		<a href="<TMPL_VAR URL_SETONTAMA>">「おんたま」を開始する</a><br />
+	</TMPL_IF>
+	</div>
+
+<hr />
+<a href="<TMPL_VAR URL_HOME>"><img localsrc="93">ホーム</a>
+</body>
+</html>

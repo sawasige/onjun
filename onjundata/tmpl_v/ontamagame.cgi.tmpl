@@ -1,0 +1,50 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<TMPL_UNLESS URL_ONTAMAGAMERETRY>
+	<center>Ç®ÇÒÇΩÇ‹ÉQÅ[ÉÄ</center>
+</TMPL_UNLESS>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+
+
+	<TMPL_IF URL_ONTAMAIMAGE>
+		<TMPL_LOOP GAMEMASSAGE>
+			<TMPL_VAR VALUE><br />
+		</TMPL_LOOP>
+		<center><img src="<TMPL_VAR URL_ONTAMAIMAGE>"></center>
+		<TMPL_IF JANKEN>
+			<form method="post" action="<TMPL_VAR URL>">
+				<TMPL_IF SESSIONNAME>
+					<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+				</TMPL_IF>
+				<TMPL_IF USERID>
+					<input type="hidden" name="userid" value="<TMPL_VAR USERID>" />
+				</TMPL_IF>
+				<center>
+				<input type="hidden" name="gametype" value="0" />
+				<input type="submit" name="gu" value="ÉOÅ[">
+				<input type="submit" name="choki" value="É`ÉáÉL">
+				<input type="submit" name="pa" value="ÉpÅ["></center>
+			</form>
+			<br />
+		</TMPL_IF>
+		<TMPL_IF URL_ONTAMAGAMERETRY>
+			<a href="<TMPL_VAR URL_ONTAMAGAMERETRY>">Ç‡Ç§àÍìx</a><br />
+		</TMPL_IF>
+		<a href="<TMPL_VAR URL_ONTAMA>">Ç‚ÇﬂÇÈ</a><br />
+
+		<br />
+		<center><TMPL_VAR ONTAMANAME>ÇÃèÛë‘</center>
+		<TMPL_IF ONTAMASTATUS>
+			<TMPL_LOOP ONTAMASTATUS>
+				<TMPL_VAR VALUE><br />
+			</TMPL_LOOP>
+		</TMPL_IF>
+	</TMPL_IF>
+
+<hr />
+<a href="<TMPL_VAR URL_ONTAMA>">$QCÇ®ÇÒÇΩÇ‹</a><br />
+<a href="<TMPL_VAR URL_HOME>">$GVÉzÅ[ÉÄ</a>
+</body>
+</html>

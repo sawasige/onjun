@@ -1,0 +1,28 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/offlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_login.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title">ようこそ onjun へ</div>
+	<div class="block_body">
+	ここは深谷高校吹奏楽部に所属した経験のある人（現役・OB/OG 問わず）、また、その家族のためのコミュニケーションの場です。<br />
+	<br />
+	偶然このページを発見した人も、深高吹奏楽部に所属した経験があったり家族が所属していたという方は、ぜひ <b><a href="<TMPL_VAR URL_REGUSER>">ユーザー登録</a></b> をお願いします！<br />
+	<br />
+	連絡が取れなくなってしまった懐かしい人もここに参加しているかもしれません。そんなとき、メールアドレスを通知しないで連絡を取り合える、<b><a href="<TMPL_VAR URL_RECEIVEMESSAGELIST>">プライベートメッセージ</a></b>機能もあります。<br />
+	<br />
+	携帯からも同じ URL でアクセスできますので、ぜひご利用ください。<br />
+	<img src="./res/qr.png">
+	</div>
+<TMPL_INCLUDE "./include/b_news.tmpl">
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

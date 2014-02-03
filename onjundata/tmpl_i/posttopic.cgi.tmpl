@@ -1,0 +1,48 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>新規トピック作成</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<TMPL_IF FORUMNAME>
+	<a href="<TMPL_VAR MAILTOPICURL>">写真の投稿はこちら</a>
+
+	<TMPL_IF MOBILE>
+		<form method="post" action="<TMPL_VAR URL>">
+	<TMPL_ELSE>
+		<form method="post" action="<TMPL_VAR URL>" enctype="multipart/form-data">
+	</TMPL_IF>
+	<input type="hidden" name="forumid" value="<TMPL_VAR FORUMID>" />
+	<TMPL_IF SESSIONNAME>
+		<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+	</TMPL_IF>
+	<font color="#639ACE">▼</font>フォーラム名<br />
+	<TMPL_VAR FORUMNAME><br />
+	<font size="-1">
+	<font color="red"><blink>※</blink></font>トピックが乱立しないように、同様のトピックがないか確認してください。<br />
+	<font color="red"><blink>※</blink></font>一覧から見やすいように、ある程度タイトルだけで内容がわかるようにしてください。<br />
+	</font>
+	<font color="#639ACE">▼</font>タイトル<br />
+	<input type="text" name="title" maxsize=255 value="<TMPL_VAR TOPICTITLE>"><br />
+	<font color="#639ACE">▼</font>本文<br />
+	<textarea rows="5" name="body"><TMPL_VAR BODY></textarea><br />
+	<TMPL_UNLESS MOBILE>
+		<font color="#639ACE">▼</font>写真1<br />
+		<input type="file" name="file1"><br />
+		<font color="#639ACE">▼</font>写真2<br />
+		<input type="file" name="file2"><br />
+		<font color="#639ACE">▼</font>写真3<br />
+		<input type="file" name="file3"><br />
+	</TMPL_UNLESS>
+	<input type="submit" name="submit" value="確認"><br />
+	</form>
+</TMPL_IF>
+<hr />
+<TMPL_IF FORUMNAME>
+<a href="<TMPL_VAR FORUMURL>">&#xE670;<TMPL_VAR FORUMNAME></a><br />
+</TMPL_IF>
+<a href="<TMPL_VAR URL_FORUMLIST>">&#xE670;フォーラム一覧</a><br />
+<a href="<TMPL_VAR URL_HOME>">&#xE663;ホーム</a>
+
+</body>
+</html>

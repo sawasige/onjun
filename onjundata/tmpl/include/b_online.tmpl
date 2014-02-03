@@ -1,0 +1,10 @@
+	<div class="block_title">オンラインのメンバー</div>
+	<div class="block_body">
+	<TMPL_IF ONLINEMEMBERS>
+		<TMPL_LOOP ONLINEMEMBERS>
+			<a href="<TMPL_VAR URL>"><TMPL_VAR NAME></a>(<TMPL_VAR PAGETITLE>)<br />
+		</TMPL_LOOP>
+	<TMPL_ELSE>
+		現在オンラインのメンバーはいません。
+	</TMPL_IF>
+	</div>

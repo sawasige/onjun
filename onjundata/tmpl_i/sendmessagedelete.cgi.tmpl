@@ -1,0 +1,32 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>送信済みメッセージ削除</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<TMPL_IF SUBJECT>
+	このメッセージを削除します。
+	<form method="post" action="<TMPL_VAR URL>">
+	<TMPL_IF SESSIONNAME>
+	<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+	</TMPL_IF>
+	<input type="hidden" name="messageid" value="<TMPL_VAR MESSAGEID>" />
+	<font color="#639ACE">▼</font>宛先<br />
+	<TMPL_VAR RECEIVER_NAME><br />
+	<font color="#639ACE">▼</font>送信日時<br />
+	<TMPL_VAR SENDTIME><br />
+	<font color="#639ACE">▼</font>サブジェクト<br />
+	<TMPL_VAR SUBJECT><br />
+	<font color="#639ACE">▼</font>本文<br />
+	<TMPL_VAR BODY><br />
+	<input type="submit" name="submit" value="削除">
+	<input type="submit" name="cancel" value="戻る">
+	</form>
+	<hr />
+</TMPL_IF>
+<a href="<TMPL_VAR URL_SENDMESSAGELIST>">&#xE6D3;送信済みメッセージ一覧</a>
+<hr />
+<a href="<TMPL_VAR URL_HOME>">&#xE663;ホーム</a>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>かんたんログイン設定</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<img localsrc="161">携帯電話の機種情報を記録して、次回からパスワードを省略してかんたんにログインが出来るようになります。
+<form method="post" action="<TMPL_VAR URL>" utn>
+<TMPL_IF SESSIONNAME>
+<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+</TMPL_IF>
+<input type="submit" name="submit" value="機種情報送信"><br />
+</form>
+<TMPL_IF MOBCODE>
+	<hr />
+	機種情報が登録されています。
+	<form method="post" action="<TMPL_VAR URL>">
+	<TMPL_IF SESSIONNAME>
+	<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+	</TMPL_IF>
+	<input type="submit" name="delete" value="解除"><br />
+	</form>
+</TMPL_IF>
+<hr />
+<a href="<TMPL_VAR URL_HOME>"><img localsrc="93">ホーム</a>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title">集計</div>
+	<div class="block_body">
+		<table cellspacing="1" width="100%">
+			<tr>
+			<th>ユーザー名</th>
+			<th>メッセージ数</th>
+			<th>トピック数</th>
+			<th>トピックコメント数</th>
+			</tr>
+		<TMPL_LOOP USERS>
+			<tr>
+			<td><a href="<TMPL_VAR USERURL>"><TMPL_VAR USERNAME></a></td>
+			<td align="right"><TMPL_VAR MESSAGECOUNT></td>
+			<td align="right"><TMPL_VAR TOPICCOUNT></td>
+			<td align="right"><TMPL_VAR TOPICCOMMENTCOUNT></td>
+			</tr>
+		</TMPL_LOOP>
+		</table>
+
+<TMPL_IF NOWPAGENOLABEL>
+		<div class="pagelink">
+			<!-- ページ -->
+			<TMPL_IF PREVPAGEURL>
+			<a href="<TMPL_VAR PREVPAGEURL>">←</a>
+			</TMPL_IF>
+			<TMPL_LOOP BACKPAGELOOP>
+			<a href="<TMPL_VAR BACKPAGEURL>"><TMPL_VAR BACKPAGELABEL></a>
+			</TMPL_LOOP>
+			<TMPL_IF NOWPAGENOLABEL>
+			<blink><b><TMPL_VAR NOWPAGENOLABEL></b></blink>
+			</TMPL_IF>
+			<TMPL_LOOP FORWARDPAGELOOP>
+			<a href="<TMPL_VAR FORWARDPAGEURL>"><TMPL_VAR FORWARDPAGELABEL></a>
+			</TMPL_LOOP>
+			<TMPL_IF NEXTPAGEURL>
+			<a href="<TMPL_VAR NEXTPAGEURL>">→</a>
+			</TMPL_IF>
+		</div>
+</TMPL_IF>
+	</div>
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

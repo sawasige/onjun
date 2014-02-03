@@ -1,0 +1,84 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<body>
+<center>コメント修正</center>
+<TMPL_IF MSG>
+<font color="red"><TMPL_VAR MSG></font><br />
+</TMPL_IF>
+<TMPL_IF TOPICTITLE>
+	<TMPL_IF MOBILE>
+		<form method="post" action="<TMPL_VAR URL>">
+	<TMPL_ELSE>
+		<form method="post" action="<TMPL_VAR URL>" enctype="multipart/form-data">
+	</TMPL_IF>
+	<input type="hidden" name="topiccommentid" value="<TMPL_VAR TOPICCOMMENTID>" />
+	<TMPL_IF SESSIONNAME>
+		<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+	</TMPL_IF>
+	<font color="#639ACE">▼</font>フォーラム名<br />
+	<TMPL_VAR FORUMNAME><br />
+	<font color="#639ACE">▼</font>トピック<br />
+	<TMPL_VAR TOPICTITLE><br />
+	<font color="#639ACE">▼</font>コメント<br />
+	<textarea rows="5" name="body"><TMPL_VAR BODY></textarea><br />
+
+	<font color="#639ACE">▼</font>写真1<br />
+	<TMPL_IF FILE1LARGEURL>
+		<TMPL_IF FILE1SMALLURL>
+			<a href="<TMPL_VAR FILE1LARGEURL>"><img src="<TMPL_VAR FILE1SMALLURL>">拡大</a><br />
+		<TMPL_ELSE>
+			<img src="<TMPL_VAR FILE1LARGEURL>"><br />
+		</TMPL_IF>
+		<input type="checkbox" name="deletefile1" <TMPL_VAR DELETEFILE1CHECKED>>削除<br />
+	<TMPL_ELSE>
+	なし<br />
+	</TMPL_IF>
+	<TMPL_UNLESS MOBILE>
+	<input type="file" name="file1"><br />
+	</TMPL_UNLESS>
+
+	<font color="#639ACE">▼</font>写真2<br />
+	<TMPL_IF FILE2LARGEURL>
+		<TMPL_IF FILE2SMALLURL>
+			<a href="<TMPL_VAR FILE2LARGEURL>"><img src="<TMPL_VAR FILE2SMALLURL>">拡大</a><br />
+		<TMPL_ELSE>
+			<img src="<TMPL_VAR FILE2LARGEURL>"><br />
+		</TMPL_IF>
+		<input type="checkbox" name="deletefile2" <TMPL_VAR DELETEFILE2CHECKED>>削除<br />
+	<TMPL_ELSE>
+	なし<br />
+	</TMPL_IF>
+	<TMPL_UNLESS MOBILE>
+	<input type="file" name="file2"><br />
+	</TMPL_UNLESS>
+
+	<font color="#639ACE">▼</font>写真3<br />
+	<TMPL_IF FILE3LARGEURL>
+		<TMPL_IF FILE3SMALLURL>
+			<a href="<TMPL_VAR FILE3LARGEURL>"><img src="<TMPL_VAR FILE3SMALLURL>">拡大</a><br />
+		<TMPL_ELSE>
+			<img src="<TMPL_VAR FILE3LARGEURL>"><br />
+		</TMPL_IF>
+		<input type="checkbox" name="deletefile3" <TMPL_VAR DELETEFILE3CHECKED>>削除<br />
+	<TMPL_ELSE>
+	なし<br />
+	</TMPL_IF>
+	<TMPL_UNLESS MOBILE>
+	<input type="file" name="file3"><br />
+	</TMPL_UNLESS>
+
+	<input type="submit" name="submit" value="確認"><br />
+
+	</form>
+</TMPL_IF>
+<hr />
+<TMPL_IF TOPICTITLE>
+<a href="<TMPL_VAR TOPICURL>">&#xE689;<TMPL_VAR TOPICTITLE></a><br />
+</TMPL_IF>
+<TMPL_IF FORUMNAME>
+<a href="<TMPL_VAR FORUMURL>">&#xE670;<TMPL_VAR FORUMNAME></a><br />
+</TMPL_IF>
+<a href="<TMPL_VAR URL_FORUMLIST>">&#xE670;フォーラム一覧</a><br />
+<a href="<TMPL_VAR URL_HOME>">&#xE663;ホーム</a>
+
+</body>
+</html>

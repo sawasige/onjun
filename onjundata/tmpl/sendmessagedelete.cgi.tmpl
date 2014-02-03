@@ -1,0 +1,40 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title">送信済みメッセージ削除</div>
+	<div class="block_body">
+		<TMPL_IF SUBJECT>
+			このメッセージを削除します。
+			<form method="post" action="<TMPL_VAR NAME=URL>">
+			<TMPL_IF SESSIONNAME>
+			<input type="hidden" name="<TMPL_VAR NAME=SESSIONNAME>" value="<TMPL_VAR NAME=SESSIONID>" />
+			</TMPL_IF>
+			<input type="hidden" name="messageid" value="<TMPL_VAR MESSAGEID>" />
+			<font color="#639ACE">▼</font>宛先<br />
+			<TMPL_VAR RECEIVER_NAME><br />
+			<font color="#639ACE">▼</font>送信日時<br />
+			<TMPL_VAR SENDTIME><br />
+			<font color="#639ACE">▼</font>サブジェクト<br />
+			<TMPL_VAR SUBJECT><br />
+			<font color="#639ACE">▼</font>本文<br />
+			<TMPL_VAR BODY>
+			<div>
+			<input type="submit" name="submit" value="削除">
+			<input type="submit" name="cancel" value="キャンセル">
+			</div>
+			</form>
+		</TMPL_IF>
+	</div>
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

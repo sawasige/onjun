@@ -1,0 +1,96 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title">トピックコメント修正確認</div>
+	<div class="block_body">
+		<a href="<TMPL_VAR NAME=URL_FORUMLIST>">フォーラム一覧</a> / <a href="<TMPL_VAR FORUMURL>"><TMPL_VAR FORUMNAME></a> / <a href="<TMPL_VAR TOPICURL>"><TMPL_VAR TOPICTITLE></a> / <b>トピックコメント修正確認</b><br />
+
+		<form method="post" action="<TMPL_VAR URL>">
+		<TMPL_IF SESSIONNAME>
+		<input type="hidden" name="<TMPL_VAR SESSIONNAME>" value="<TMPL_VAR SESSIONID>" />
+		</TMPL_IF>
+		<font color="#639ACE">▼</font>フォーラム名<br />
+		<TMPL_VAR FORUMNAME><br />
+		<font color="#639ACE">▼</font>トピック<br />
+		<TMPL_VAR TOPICTITLE><br />
+		<font color="#639ACE">▼</font>コメント<br />
+		<TMPL_VAR BODY><br />
+
+		<font color="#639ACE">▼</font>写真1<br />
+		<TMPL_IF FILE1LARGEURL>
+			<TMPL_IF FILE1SMALLURL>
+				<a href="<TMPL_VAR FILE1LARGEURL>"><img src="<TMPL_VAR FILE1SMALLURL>">拡大</a><br />
+			<TMPL_ELSE>
+				<img src="<TMPL_VAR FILE1LARGEURL>"><br />
+			</TMPL_IF>
+			<TMPL_IF FILE1>
+				<TMPL_VAR FILE1>に差し替えます。<br />
+			<TMPL_ELSE>
+				<TMPL_IF DELETEFILE1CHECKED><font color="red">削除します。</font><br /></TMPL_IF>
+			</TMPL_IF>
+		<TMPL_ELSE>
+			<TMPL_IF FILE1>
+				<TMPL_VAR FILE1><br />
+			<TMPL_ELSE>
+				なし<br />
+			</TMPL_IF>
+		</TMPL_IF>
+
+		<font color="#639ACE">▼</font>写真2<br />
+		<TMPL_IF FILE2LARGEURL>
+			<TMPL_IF FILE2SMALLURL>
+				<a href="<TMPL_VAR FILE2LARGEURL>"><img src="<TMPL_VAR FILE2SMALLURL>">拡大</a><br />
+			<TMPL_ELSE>
+				<img src="<TMPL_VAR FILE2LARGEURL>"><br />
+			</TMPL_IF>
+			<TMPL_IF FILE2>
+				<TMPL_VAR FILE2>に差し替えます。<br />
+			<TMPL_ELSE>
+				<TMPL_IF DELETEFILE2CHECKED><font color="red">削除します。</font><br /></TMPL_IF>
+			</TMPL_IF>
+		<TMPL_ELSE>
+			<TMPL_IF FILE2>
+				<TMPL_VAR FILE2><br />
+			<TMPL_ELSE>
+				なし<br />
+			</TMPL_IF>
+		</TMPL_IF>
+
+		<font color="#639ACE">▼</font>写真3<br />
+		<TMPL_IF FILE3LARGEURL>
+			<TMPL_IF FILE3SMALLURL>
+				<a href="<TMPL_VAR FILE3LARGEURL>"><img src="<TMPL_VAR FILE3SMALLURL>">拡大</a><br />
+			<TMPL_ELSE>
+				<img src="<TMPL_VAR FILE3LARGEURL>"><br />
+			</TMPL_IF>
+			<TMPL_IF FILE3>
+				<TMPL_VAR FILE3>に差し替えます。<br />
+			<TMPL_ELSE>
+				<TMPL_IF DELETEFILE3CHECKED><font color="red">削除します。</font><br /></TMPL_IF>
+			</TMPL_IF>
+		<TMPL_ELSE>
+			<TMPL_IF FILE3>
+				<TMPL_VAR FILE3><br />
+			<TMPL_ELSE>
+				なし<br />
+			</TMPL_IF>
+		</TMPL_IF>
+
+		<input type="submit" name="submit" value="送信">
+		<input type="submit" name="cancel" value="再入力">
+		</form>
+
+	</div>
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">

@@ -1,0 +1,34 @@
+<TMPL_INCLUDE "./include/head.tmpl">
+<TMPL_INCLUDE "./include/onlinetitle.tmpl">
+
+<div id="navigator">
+<TMPL_INCLUDE "./include/b_menu.tmpl">
+<TMPL_INCLUDE "./include/b_online.tmpl">
+<TMPL_INCLUDE "./include/b_newmembers.tmpl">
+</div>
+
+<div id="contents">
+	<TMPL_INCLUDE "./include/b_msg.tmpl">
+	<div class="block_title">フォーラム一覧</div>
+	<div class="block_body">
+		<TMPL_LOOP FORUMCATEGORIES>
+			<a name="cat<TMPL_VAR ID>"></a>
+			<div class="block_title"><TMPL_VAR NAME></div>
+			<TMPL_LOOP FORUMS>
+				<a href="<TMPL_VAR URL>"><TMPL_VAR NAME></a><br />
+				<TMPL_VAR NOTE><br />
+				<TMPL_IF LASTUSER>
+				最終投稿:<a href="<TMPL_VAR URL_LASTUSER>"><TMPL_VAR LASTUSER></a><br />
+				<TMPL_VAR LASTTIME><br />
+				</TMPL_IF>
+				話題数:<TMPL_VAR THREADCOUNT><br />
+				投稿数:<TMPL_VAR POSTCOUNT><br />
+				<br />
+			</TMPL_LOOP>
+		</TMPL_LOOP>
+	</div>
+</div>
+<div id="right">
+	<TMPL_INCLUDE "./include/b_varticalbanner.tmpl">
+</div>
+<TMPL_INCLUDE "./include/foot.tmpl">
